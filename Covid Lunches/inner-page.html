@@ -28,6 +28,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script type="text/javascript" src="assets/js/profilepic.js"></script>
+
   <!-- =======================================================
   * Template Name: Restaurantly - v1.2.1
   * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
@@ -63,9 +65,11 @@
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <!--Profile picture-->
-      <img src="assets/img/Profile/pumpple.jpg" alt="Profile" class="profilepic">
-
-      <nav class="nav-menu d-none d-lg-block">
+      <img id="Profile_Pic" src="assets/img/Profile/pumpple.jpg" 
+           alt="Profile" class="profilepic">
+      <script>get_profile_pic();</script>
+      
+     <nav class="nav-menu d-none d-lg-block">
           <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="#about">About</a></li>
