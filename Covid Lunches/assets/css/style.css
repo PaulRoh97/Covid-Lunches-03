@@ -27,6 +27,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", serif;
 }
 
+/*
+#Profile Picture
+*/
+.profilepic {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #d9ba85;
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
