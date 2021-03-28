@@ -5,6 +5,7 @@ let path = require('path')
 let sassMiddleware = require('node-sass-middleware')
 
 let app = express()
+const {gethomepage} = require('./routes/index')
 
 nunjucks.configure('views', {
   autoescape: true,
@@ -20,14 +21,10 @@ app.use(sassMiddleware({
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', function(req, res, next) {
-  let  data = {
-    content: 'Hello world!',
-    title: 'Bootstrap example'
-  }
 
-  res.render('index.njk', data)
-})
+
+
+app.get('/', gethomepage)
 
 let server = http.createServer(app)
 
