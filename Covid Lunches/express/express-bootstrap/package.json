@@ -1,9 +1,9 @@
 {
-  "name": "covidlunches",
+  "name": "express-bootstrap",
   "version": "1.0.0",
-  "description": "bootstrap and express set up for covidlunches",
+  "description": "express set up for covid lunches 03",
   "main": "index.js",
-  "repository": "PaulRoh97/Covid-Lunches/03",
+  "repository": "https://github.com/PaulRoh97/Covid-Lunches-03",
   "author": "Maura Choudhary",
   "license": "MIT",
   "dependencies": {
