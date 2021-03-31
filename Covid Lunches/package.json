@@ -1,0 +1,37 @@
+{
+  "name": "restaurantly",
+  "title": "Restaurantly",
+  "version": "1.2.1",
+  "description": "Restaurantly - Bootstrap Website Template",
+  "author": "BootstrapMade.com",
+  "homepage": "https://bootstrapmade.com/restaurantly-restaurant-template/",
+  "license": "https://bootstrapmade.com/license/",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "node_modules/.bin/gulp start",
+    "watch": "node_modules/.bin/gulp watch",
+    "dist": "node_modules/.bin/gulp"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "bootstrap": "^4.6.0",
+    "boxicons": "^2.0.7",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.5.1",
+    "jquery.easing": "^1.4.1",
+    "owl.carousel": "^2.3.4",
+    "venobox": "^1.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-beautify": "^3.0.0",
+    "gulp-inject-string": "^1.1.2",
+    "gulp-nunjucks": "^5.1.0",
+    "gulp-sass": "^4.1.0",
+    "merge-stream": "^2.0.0"
+  }
+}

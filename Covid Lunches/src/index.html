@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+
+{% set page="home" %}
+
+{% block meta %}
+  <title>Restaurantly Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+{% endblock %}
+
+{% block content %}
+
+  {% include "parts/hero.html" %}
+
+  <main id="main">
+
+    {% include "parts/about-section.html" %}
+
+    {% include "parts/why-us-section.html" %}
+
+    {% include "parts/menu-section.html" %}
+
+    {% include "parts/specials-section.html" %}
+
+    {% include "parts/events-section.html" %}
+
+    {% include "parts/book-a-table-section.html" %}
+
+    {% include "parts/testimonials-section.html" %}
+
+    {% include "parts/gallery-section.html" %}
+
+    {% include "parts/chefs-section.html" %}
+
+    {% include "parts/contact-section.html" %}
+
+  </main><!-- End #main -->
+
+{% endblock %}
