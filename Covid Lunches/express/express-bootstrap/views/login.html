@@ -6,23 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../public/css/util.css">
-    <link rel="stylesheet" type="text/css" href="../public/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
 </head>
-<!-- <style>
-    div {
-        background-image: url('/food.jpeg');
-        background-repeat: no-repeat;
-        position: relative;
-        background-clip: ;
-    }
-</style> -->
 
 <body>
-    <button id="loginBtn">Login</button>
-    <div id="myModal" class="modal card card-body">
+    <button id="login-btn">Login</button>
+    <div id="modal" class="modal card card-body">
         <div id="limiter" class="limiter">
             <div class="modal-content animate">
                 <div id="container" class="container-login">
@@ -31,19 +23,19 @@
                             COVID Lunches.
                         </span>
 
-                        <div class="wrap-input validate-input m-b-16" data-validate="Email is required">
-                            <input id="email" class="input" type="text" name="email" placeholder="Email" autocomplete="off">
+                        <div class="email wrap-input m-b-16">
+                            <input id="email" class="input" type="text" name="email" placeholder="Email"
+                                autocomplete="off">
                             <span class="input-focus"></span>
                         </div>
 
-
-                        <div class="wrap-input validate-input m-b-16" data-validate="Password is required">
-                            <input class="input" type="password" name="pass" placeholder="Password">
+                        <div class="password wrap-input m-b-16">
+                            <input id="password" class="input" type="password" name="pass" placeholder="Password">
                             <span class="input-focus"></span>
                         </div>
 
-                        <div class="flex-sb-m w-full p-t-3 p-b-24">
-                            <div class="contact100-form-checkbox">
+                        <div id="checkbox" class="flex-sb-m w-full p-t-3 p-b-24">
+                            <div>
                                 <input class="input-checkbox" id="ckb1" type="checkbox" name="remember-me">
                                 <label class="label-checkbox" for="ckb1">
                                     Remember me
@@ -57,19 +49,19 @@
                             </div>
                         </div>
 
-                        <div class="container-login-form-btn m-t-17">
+                        <div id="login-form-btn" class="container-login-form-btn m-t-17">
                             <button class="login-form-btn">
                                 Login
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>`
             </div>
         </div>
     </div>
 
     <!--===============================================================================================-->
-    <script src="routes/login.js"></script>
+    <script type="text/javascript" src="login.js"></script>
 
 </body>
 
