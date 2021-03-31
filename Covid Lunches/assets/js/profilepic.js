@@ -25,8 +25,8 @@ function is_valid_pic_path(picPath, callback) {
 /* the src of the image is the profile picture in the database*/
 function get_profile_pic() {
 
-    //var src = "assets/img/chefs/chefs-1.jpg";
-    var src = "assets/img/chefs/chef.jpg";
+    var src = "assets/img/chefs/chefs-1.jpg";
+    //var src = "assets/img/chefs/chef.jpg";
     //var src = "assets/img/chefs/chefs-1.txt";
 
 
