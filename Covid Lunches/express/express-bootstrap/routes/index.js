@@ -5,7 +5,7 @@ module.exports = {
             title: 'Bootstrap example'
         }
         
-        res.render('index.njk', data)
+        res.render('index.html', data)
         
     }
 }
