@@ -12,13 +12,18 @@ loginBtn.onclick = function () {
     modal.style.display = "block";
 }
 
-// close the login form when user clicks outside of it
+// close the login form when user clicks outside of it and cleans up input fields
 window.onclick = function (event) {
     if (event.target == container) {
         modal.style.display = "none";
+        document.getElementById('email').value = '';
+        document.getElementById('password').value = '';
+        clearError('email-alert');
+        clearError('pass-alert');
     }
 }
 
+// validate email and password upon login attempt
 loginFormBtn.onclick = function () {
     validateEmail();
     validatePassword();
@@ -26,36 +31,39 @@ loginFormBtn.onclick = function () {
 
 // validate email address
 function validateEmail () {
-    
+    // grab the email input field
     let emailField = document.getElementById('email');
     let mailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let errorMessage = '';
     
     if (emailField.value.match(mailFormat)) {
-        clearEmailError();
+        clearError('email-alert');
+        return true;
     } else if (emailField.value == '') {
-        let message = 'Please enter an email address.';
-        showError(message, 'email-alert', 'email')
+        errorMessage = 'Please enter an email address.';
     } else {
-        let message = 'Invalid email address. Please try again.';
-        showError(message, 'email-alert', 'email')
+        errorMessage = 'Invalid email address. Please try again.';
     }
+    showError(errorMessage, 'email-alert', 'email');
+    return false;
 }
 
 // validate password
 function validatePassword () {
-    
+    // grab the password input field
     let passField = document.getElementById('password');
-    let passFormat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+    let passFormat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+    let errorMessage = '';
 
     if (passField.value.match(passFormat)) {
-        clearPasswordError();
+        clearError('pass-alert');
     } else if (passField.value == '') {
-        let message = 'Please enter a password.';
-        showError(message, 'pass-alert', 'password');
+        errorMessage = 'Please enter a password.';
     } else {
-        let message = 'Password must be 7 to 15 characters and contain at least one numeric digit and a special character.';
-        showError(message, 'pass-alert', 'password');
+        errorMessage = 'Password must be 8 to 16 characters and contain at least one numeric digit and a special character.';
     }
+    showError(errorMessage, 'pass-alert', 'password');
+    return true;
 }
 
 // display error message
@@ -72,29 +80,21 @@ function showError(errorMessage, errorType, element) {
     errorDiv.appendChild(document.createTextNode(errorMessage));
     errorDiv.style.color = 'red';
     errorDiv.style.marginBottom = "10px"
-    // errorDiv.style.fontSize = 'small';
+
     // insert error message above input field
     card.insertBefore(errorDiv, inputField);
 
     // clear error
     if (document.getElementsByClassName('pass-alert').length > 1) {
-        console.log('Greater than 1');
-        clearPasswordError();
+        clearError('pass-alert');
     }
     if (document.getElementsByClassName('email-alert').length > 1) {
-        console.log('Greater than 1');
-        clearEmailError();
+        clearError('email-alert');
     }
 }
 
-function clearEmailError() {
-    if (document.getElementsByClassName('email-alert').length >= 1) {
-        document.querySelector('.email-alert').remove();
-    }
-}
-
-function clearPasswordError () {
-    if (document.getElementsByClassName('pass-alert').length >= 1) {
-        document.querySelector('.pass-alert').remove();
+function clearError(errorType) {
+    if (document.getElementsByClassName(`${errorType}`).length >= 1) {
+        document.querySelector(`.${errorType}`).remove();
     }
 }
