@@ -84,12 +84,9 @@ function showError(errorMessage, errorType, element) {
     // insert error message above input field
     card.insertBefore(errorDiv, inputField);
 
-    // clear error
-    if (document.getElementsByClassName('pass-alert').length > 1) {
-        clearError('pass-alert');
-    }
-    if (document.getElementsByClassName('email-alert').length > 1) {
-        clearError('email-alert');
+    // clear errors
+    if (document.getElementsByClassName(errorType).length > 1) {
+        clearError(errorType);
     }
 }
 
