@@ -12,6 +12,7 @@ function is_valid_pic_extension(picPath) {
 
     return true;
 }
+
 /*validate the picture*/
 function is_valid_pic_path(picPath, callback) {
 
