@@ -6,8 +6,7 @@ module.exports = {
             content: 'Hello world!',
             title: 'Bootstrap example'
         }
-        
-        res.render('login.html', data)
-        
+
+        res.render('index.html', data)   
     }
 }
