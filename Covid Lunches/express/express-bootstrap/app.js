@@ -5,7 +5,8 @@ let nunjucks = require('nunjucks')
 let mysql = require('mysql')
 let path = require('path')
 let sassMiddleware = require('node-sass-middleware')
-var covid = require('./routes/covid')
+let covid = require('./routes/covid')
+let Sequelize = require('sequelize')
 
 let app = express()
 // const {gethomepage} = require('./routes/index')
@@ -16,22 +17,26 @@ var options = require('./options.js');
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
-const db = mysql.createConnection ({
+var db = new Sequelize('socka', options.storageConfig.user, options.storageConfig.password, {
   host: options.storageConfig.host,
-  user: options.storageConfig.user,
-  password: options.storageConfig.password,
-  database: options.storageConfig.db
-});
+  dialect: 'mysql',
 
-
-// connect to database
-db.connect((err) => {
-  if (err) {
-      throw err;
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
   }
-  console.log('Connected to database');
 });
-global.db = db;
+
+db
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
 
 nunjucks.configure('views', {
   autoescape: true,
