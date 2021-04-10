@@ -8,16 +8,16 @@ let sassMiddleware = require('node-sass-middleware')
 let app = express()
 const {gethomepage} = require('./routes/index')
 
-var options = require('./options.js');
+
 
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 const db = mysql.createConnection ({
-  host: options.storageConfig.host,
-  user: options.storageConfig.user,
-  password: options.storageConfig.password,
-  database: options.storageConfig.db
+  host: 'softwaredev.cfbh0dw0st0e.us-east-1.rds.amazonaws.com',
+  user: 'admin',
+  password: '14AWGblu!!',
+  database: 'socka'
 });
 
 // connect to database
