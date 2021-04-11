@@ -36,6 +36,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', covid)
 
 
+app.get('/inner', function (req, res) {
+    res.sendFile(path.join(__dirname + '/views/inner-page.html'));
+});
+
 let server = http.createServer(app)
 
 
