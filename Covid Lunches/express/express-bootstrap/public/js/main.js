@@ -68,8 +68,10 @@
     });
     $('body').append($mobile_nav);
     $('.mobile-nav').prepend('<button type="button" class="mobile-nav-close"><i class="icofont-close"></i></button>');
-    $('#header').append('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
-    $('body').append('<div class="mobile-nav-overly"></div>');
+    //$('#header').append('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+      $('#header').append('<button type="button" class="mobile-nav-toggle d-lg-none"> \
+                <img id="Profile_Pic" src="/img/pumpple.jpg" alt = "Profile" class= "profilepic d-lg-none" > </button > ');
+      $('body').append('<div class="mobile-nav-overly"></div>');
 
     $(document).on('click', '.mobile-nav-toggle', function(e) {
       $('body').toggleClass('mobile-nav-active');
