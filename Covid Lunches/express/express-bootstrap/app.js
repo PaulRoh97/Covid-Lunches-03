@@ -82,6 +82,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', covid)
 
 
+
 let server = http.createServer(app)
 
 server.listen('3000', () => {
