@@ -11,17 +11,18 @@ let app = express()
 // const {gethomepage} = require('./routes/index')
 // const {getloginpage} = require('./routes/start')
 
-
+var options = require('./options.js');
 
 
 // create connection to database
 // the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 const db = mysql.createConnection ({
-  host: 'softwaredev.cfbh0dw0st0e.us-east-1.rds.amazonaws.com',
-  user: 'admin',
-  password: '14AWGblu!!',
-  database: 'socka'
+  host: options.storageConfig.host,
+  user: options.storageConfig.user,
+  password: options.storageConfig.password,
+  database: options.storageConfig.db
 });
+
 
 // connect to database
 db.connect((err) => {
