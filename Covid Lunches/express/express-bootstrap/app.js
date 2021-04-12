@@ -38,6 +38,31 @@ db
   });
 
 
+
+//Testing DB Table creation/Sync
+const Account = db.define('accounts', { accountID: Sequelize.INTEGER, name: Sequelize.STRING, profilePic: Sequelize.STRING, testData: Sequelize.STRING});
+
+db.sync({ force: true })
+  .then(() => {
+    console.log('Database & Tables created!');
+
+  });
+
+  
+//Creating "Account" in the new table
+db.sync({ force: true })
+  .then(() => {
+    console.log('Database & tables created!')
+
+    Account.bulkCreate([
+      { accountID: 1, name: 'Adam', profilePic: '/public/img/pumpple.jpg'}
+    ]).then(function() {
+      return Account.findAll()
+    }).then(function(accounts) {
+      console.log(accounts)
+    })
+  })
+
 nunjucks.configure('views', {
   autoescape: true,
   express: app
@@ -55,6 +80,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.use('/', covid)
+
 
 let server = http.createServer(app)
 
