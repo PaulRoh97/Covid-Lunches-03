@@ -9,13 +9,10 @@ var router = express.Router()
 // })
 
 router.get('/', async function (req, res){
-    //console.log('in get function')
+
     const user = await db.accounts.findOne({
         where: { email: 'test@test.com' }
     })
-    //setTimeout(() => {console.log(user.account);},1000);
-    console.log(user.profilePic)
-    
 
     res.render('index.html', {
 
