@@ -25,6 +25,7 @@ function myMap() {
 
     /*TODO: data query the profile's default location's*/
     const default_location = { lat: 39.34885819161449, lng: -76.51970863089325 };
+    //39.015975363512396, -76.67026638671018
     var test_lat_index = 0;
 
     /*Map currently looks at pcikup location */
@@ -44,9 +45,14 @@ function myMap() {
     google.maps.event.addListener(marker, 'click', function () {
 
         /*change lat long for testing*/
-        var new_location = { lat: 1, lng: 1 };
-        marker.position = new_location;
-        map.center = new_location;
+        marker.setMap(null);
+        var new_location = { lat: 39.015975363512396, lng: -76.67026638671018 };
+        new_marker = new google.maps.Marker({
+            position: new_location,
+            map: map,
+            animation: google.maps.Animation.DROP,
+        });
+        map.setCenter(new_location);
     });
 
 
