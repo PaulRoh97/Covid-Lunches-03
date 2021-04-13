@@ -4,7 +4,8 @@ var options = require('../options.js');
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize("socka", options.storageConfig.user, options.storageConfig.password, {
   host: options.storageConfig.host,
-  dialect: "mysql"
+  dialect: "mysql",
+  logging: false
 });
 
 const db = {};
