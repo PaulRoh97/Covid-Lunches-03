@@ -41,6 +41,8 @@ function myMap() {
         animation: google.maps.Animation.DROP,
     });
 
+    document.getElementById("LocationLabel").innerHTML = "Elmwood Elementary";
+
     console.log("created map at marker location");
 
     /*Test functionality: change marker to a list of testing locations on click*/
@@ -60,8 +62,11 @@ function myMap() {
 
         marker.setPosition(new_location);
         map.setCenter(new_location);
-        console.log("Have new marker at location: " + testLocations[test_lat_index][0]);
 
+        var locationLabel = document.getElementById("LocationLabel");
+        locationLabel.innerHTML = testLocations[test_lat_index][0];
+
+        console.log("Have new marker at location: " + testLocations[test_lat_index][0]);
         test_lat_index = (test_lat_index + 1) % testLocations.length;
     });
 
