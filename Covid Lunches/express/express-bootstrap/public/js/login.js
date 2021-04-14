@@ -7,9 +7,20 @@ let loginBtn = document.getElementById("login-btn");
 // grab the login button
 let loginFormBtn = document.getElementById('login-form-btn');
 
+// guest login elements are similar to login
+let guestLoginBtn = document.getElementById("guest-login-btn");
+let guestModal = document.getElementById("guest-modal");
+let guestContainer = document.getElementById("guest-container");
+let guestLoginFormBtn = document.getElementById('guest-login-form-btn');
+
 // open the pop-up login form when the user clicks on the login button
 loginBtn.onclick = function () {
     modal.style.display = "block";
+}
+
+/*Open menu to login as guest */
+guestLoginBtn.onclick = function () {
+    guestModal.style.display = "block";
 }
 
 // close the login form when user clicks outside of it and cleans up input fields
@@ -21,6 +32,39 @@ window.onclick = function (event) {
         clearError('email-alert');
         clearError('pass-alert');
     }
+
+    //Guest modal has different parameters to clear
+    if (event.target == guestContainer) {
+        guestModal.style.display = "none";
+        document.getElementById('guest-code').value = '';
+        clearError('guest-code-alert');
+    }
+}
+
+// validate email and password upon login attempt
+guestLoginFormBtn.onclick = function () {
+    console.log('Submitting Guest Login');
+    validateGuestCode();
+}
+
+// validate email address
+function validateGuestCode() {
+    // grab the email input field
+    let GuestField = document.getElementById('guest-code');
+    let CodeFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let CodeMessage = '';
+
+    if (GuestField.value.match(CodeFormat)) {
+        clearError('guest-code-alert');
+        return true;
+    } else if (GuestField.value == '') {
+        errorMessage = 'Please enter a code.';
+        console.log('Should show empty code message');
+    } else {
+        errorMessage = 'Invalid guest code. Please try again.';
+    }
+    showError(errorMessage, 'guest-code-alert', 'guest-code');
+    return false;
 }
 
 // validate email and password upon login attempt
