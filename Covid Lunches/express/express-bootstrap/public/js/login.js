@@ -47,11 +47,15 @@ guestLoginFormBtn.onclick = function () {
     validateGuestCode();
 }
 
-// validate email address
+// validate guest login, similar to email and password
 function validateGuestCode() {
-    // grab the email input field
     let GuestField = document.getElementById('guest-code');
-    let CodeFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    /*Not sure how we want to format the guest code, so have multiple formats
+     -email, -number code, -number word code*/
+    //let CodeFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let CodeFormat = /^[0-9]{8,16}$/;
+    //let CodeFormat = /^[a-zA-Z0-9]{8,16}$/;
     let CodeMessage = '';
 
     if (GuestField.value.match(CodeFormat)) {
@@ -61,7 +65,8 @@ function validateGuestCode() {
         errorMessage = 'Please enter a code.';
         console.log('Should show empty code message');
     } else {
-        errorMessage = 'Invalid guest code. Please try again.';
+        console.log(GuestField.value + ' is not a valid format');
+        errorMessage = 'Invalid guest code. Enter email/number code/wordnum code. Please try again.';
     }
     showError(errorMessage, 'guest-code-alert', 'guest-code');
     return false;
