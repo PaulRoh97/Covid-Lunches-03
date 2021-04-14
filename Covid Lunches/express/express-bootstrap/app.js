@@ -45,6 +45,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', gethomepage)
 
+app.get('/login', function (req, res) {
+    res.sendFile(path.join(__dirname + '/views/login.html'));
+});
+
 let server = http.createServer(app)
 
 server.listen('3000', () => {
