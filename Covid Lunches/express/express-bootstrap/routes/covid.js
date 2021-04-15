@@ -24,4 +24,8 @@ router.get('/login', async function (req, res){
     //console.log('in get function')
     res.render('login.html')   
 })
+router.get('/inner-page', function (req, res){
+    //console.log('in get function')
+    res.render('inner-page.html')   
+})
 module.exports = router;
