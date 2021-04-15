@@ -5,7 +5,7 @@ Notes)
   
 Required Technologies)
   Node.js 14.16.0
-  run "node install" to install dependencies for running/testing
+  run "npm install" to install dependencies for running/testing
   
   
 Running Instructions)
