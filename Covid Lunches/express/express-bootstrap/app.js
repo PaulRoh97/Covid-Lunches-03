@@ -5,7 +5,10 @@ let nunjucks = require('nunjucks')
 let mysql = require('mysql')
 let path = require('path')
 let sassMiddleware = require('node-sass-middleware')
-var covid = require('./routes/covid')
+let covid = require('./routes/covid')
+let Sequelize = require('sequelize')
+let db = require('./models')
+db.sequelize.sync()
 
 let app = express()
 // const {gethomepage} = require('./routes/index')
@@ -13,25 +16,6 @@ let app = express()
 
 var options = require('./options.js');
 
-
-// create connection to database
-// the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
-const db = mysql.createConnection ({
-  host: options.storageConfig.host,
-  user: options.storageConfig.user,
-  password: options.storageConfig.password,
-  database: options.storageConfig.db
-});
-
-
-// connect to database
-db.connect((err) => {
-  if (err) {
-      throw err;
-  }
-  console.log('Connected to database');
-});
-global.db = db;
 
 nunjucks.configure('views', {
   autoescape: true,
@@ -51,7 +35,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', covid)
 
+
 let server = http.createServer(app)
+
 
 server.listen('3000', () => {
   console.log('Listening on port 3000')

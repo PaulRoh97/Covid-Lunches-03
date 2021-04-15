@@ -1,4 +1,5 @@
 var express = require('express')
+const db = require('../models')
 var router = express.Router()
 
 // // middleware that is specific to this router
@@ -7,11 +8,19 @@ var router = express.Router()
 //     next()
 // })
 
-router.get('/', function (req, res){
-    //console.log('in get function')
-    res.render('index.html')   
+router.get('/', async function (req, res){
+
+    const user = await db.accounts.findOne({
+        where: { email: 'test@test.com' }
+    })
+
+    res.render('index.html', {
+
+        profilePic: user.profilePic
+
+    })   
 })
-router.get('/login', function (req, res){
+router.get('/login', async function (req, res){
     //console.log('in get function')
     res.render('login.html')   
 })
