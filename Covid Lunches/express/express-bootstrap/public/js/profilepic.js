@@ -30,11 +30,18 @@ function get_profile_pic() {
     //var src = "../public/img/chefs/chef.jpg";
     //var src = "../public/img/chefs/chefs-1.txt";
 
+    console.log('Checking profile pic' + src);
 
     if (is_valid_pic_extension(src)) {
         is_valid_pic_path(src, function (exists) {
             if (exists) {
-                document.getElementById("Profile_Pic").src = src;
+
+                /*update any profile pics if multiple pictures are shown*/
+                var pictures = document.querySelectorAll(".profilepic");
+                console.log('Profile pic elements on page: ' + pictures.length);
+                for (i = 0; i < pictures.length; i++){
+                    pictures[i].src = src;
+                }
             }
         })
     }
