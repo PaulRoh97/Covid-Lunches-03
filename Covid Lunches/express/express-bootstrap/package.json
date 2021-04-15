@@ -1,0 +1,39 @@
+{
+  "name": "express-bootstrap",
+  "version": "1.0.0",
+  "description": "express set up for covid lunches 03",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulRoh97/Covid-Lunches-03.git"
+  },
+  "author": "Maura Choudhary",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "node-sass-middleware": "^0.11.0",
+    "nunjucks": "^3.2.3",
+    "sequelize": "^6.6.2"
+  },
+  "bugs": {
+    "url": "https://github.com/PaulRoh97/Covid-Lunches-03/issues"
+  },
+  "homepage": "https://github.com/PaulRoh97/Covid-Lunches-03#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "puppeteer": "^8.0.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon app.js -e '*'",
+    "nunjucks": "^3.2.3",
+    "sequelize": "^6.6.2"
+  }
+}
