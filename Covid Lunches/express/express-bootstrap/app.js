@@ -36,10 +36,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', covid)
 
 
-app.get('/inner', function (req, res) {
-    res.sendFile(path.join(__dirname + '/views/inner-page.html'));
-});
-
 app.get('/config.js', function (req, res) {
     res.sendFile(__dirname + '/config.js');
 });

@@ -14,7 +14,7 @@ router.get('/', async function (req, res){
         where: { email: 'test@test.com' }
     })
 
-    res.render('index.html', {
+    res.render('index.njk', {
 
         profilePic: user.profilePic
 
@@ -22,10 +22,11 @@ router.get('/', async function (req, res){
 })
 router.get('/login', async function (req, res){
     //console.log('in get function')
-    res.render('login.html')   
+    res.render('login.njk')   
 })
 router.get('/inner-page', function (req, res){
     //console.log('in get function')
-    res.render('inner-page.html')   
+    res.render('inner-page.njk')   
 })
+
 module.exports = router;
