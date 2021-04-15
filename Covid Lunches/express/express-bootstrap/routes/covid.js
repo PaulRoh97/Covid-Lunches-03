@@ -8,23 +8,42 @@ var router = express.Router()
 //     next()
 // })
 
-router.get('/', async function (req, res){
+router.get('/', async function (req, res) {
 
     const user = await db.accounts.findOne({
-        where: { email: 'test@test.com' }
+        where: {
+            email: 'test@test.com'
+        }
     })
 
     res.render('index.njk', {
 
-        profilePic: user.profilePic
+        profilePic: user.profilePic,
 
-    })   
+    })
 })
-router.get('/login', async function (req, res){
+router.get('/profile', async function (req, res) {
+
+    const user = await db.accounts.findOne({
+        where: {
+            email: 'test@test.com'
+        }
+    })
+
+    res.render('profile-page.njk', {
+
+        profilePic: user.profilePic,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+
+    })
+})
+router.get('/login', async function (req, res) {
     //console.log('in get function')
     res.render('login.njk')   
 })
-router.get('/inner-page', function (req, res){
+router.get('/inner-page', function (req, res) {
     //console.log('in get function')
     res.render('inner-page.njk')   
 })

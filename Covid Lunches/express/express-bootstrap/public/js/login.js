@@ -14,7 +14,7 @@ loginBtn.onclick = function () {
 
 // close the login form when user clicks outside of it and cleans up input fields
 window.onclick = function (event) {
-    if (event.target == container) {
+    if (event.target == modal) {
         modal.style.display = "none";
         document.getElementById('email').value = '';
         document.getElementById('password').value = '';
@@ -30,12 +30,12 @@ loginFormBtn.onclick = function () {
 }
 
 // validate email address
-function validateEmail () {
+function validateEmail() {
     // grab the email input field
     let emailField = document.getElementById('email');
     let mailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let errorMessage = '';
-    
+
     if (emailField.value.match(mailFormat)) {
         clearError('email-alert');
         return true;
@@ -49,7 +49,7 @@ function validateEmail () {
 }
 
 // validate password
-function validatePassword () {
+function validatePassword() {
     // grab the password input field
     let passField = document.getElementById('password');
     let passFormat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
