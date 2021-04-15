@@ -1,6 +1,7 @@
 var express = require('express')
 const db = require('../models')
 var router = express.Router()
+var login_auth = require('../routes/login-auth.js')
 
 // // middleware that is specific to this router
 // router.use(function timeLog (req, res, next) {
@@ -26,6 +27,18 @@ router.get('/login', async function (req, res){
 })
 router.get('/inner-page', function (req, res){
     //console.log('in get function')
-    res.render('inner-page.html')   
+    let email = req.query.myEmail;
+    let password = req.query.myPassword;
+    let count = login_auth.validateLogin(email, password);
+    let valid =count.countVal;
+    console.log("count returned: "+count.countVal);
+    if(valid){
+        console.log("login credentials correct")
+        res.render('inner-page.html')  
+    }else{
+        res.redirect('/login')
+        console.log("login credentials incorrect")
+    }
+     
 })
 module.exports = router;
