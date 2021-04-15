@@ -49,6 +49,9 @@ app.get('/inner', function (req, res) {
     res.sendFile(path.join(__dirname + '/views/inner-page.html'));
 });
 
+app.get('/config.js', function (req, res) {
+    res.sendFile(__dirname + '/config.js');
+});
 let server = http.createServer(app)
 
 server.listen('3000', () => {
