@@ -1,38 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Covid Lunches</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+  <title>Covid Lunches</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <!-- Favicons -->
-    <link href="/img/favicon.jpg" rel="icon">
-    <link href="/img/apple-touch-icon.jpg" rel="apple-touch-icon">
+  <!-- Favicons -->
+  <link href="/img/favicon.jpg" rel="icon">
+  <link href="/img/apple-touch-icon.jpg" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="/css/style.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="/css/style.css" rel="stylesheet">
 
-    <script type="text/javascript" src="/js/profilepic.js"></script>
+  <script type="text/javascript" src="/js/profilepic.js"></script>
 
-    <!-- =======================================================
+  <!-- =======================================================
   * Template Name: Restaurantly - v1.2.1
   * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
   * Author: BootstrapMade.com
@@ -41,118 +40,114 @@
 </head>
 
 <body>
-    <!-- ======= Top Bar ======= -->
-    <div id="topbar" class="d-flex align-items-center fixed-top">
-        <div class="container d-flex">
-            <div class="contact-info mr-auto">
-                <i class="icofont-phone"></i> +1 000 000 0000
-                <span class="d-none d-lg-inline-block"><i class="icofont-clock-time icofont-rotate-180"></i> Mon-Sat:
-                    11:00 AM - 11:01 AM</span>
-            </div>
-            <div class="languages">
-                <ul>
-                    <li>En</li>
-                    <!--<li><a href="#">De</a></li>-->
-                </ul>
-            </div>
-        </div>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-phone"></i> +1 000 000 0000
+        <span class="d-none d-lg-inline-block"><i class="icofont-clock-time icofont-rotate-180"></i> Mon-Sat: 11:00 AM - 11:01 AM</span>
+      </div>
+      <div class="languages">
+        <ul>
+          <li>En</li>
+          <!--<li><a href="#">De</a></li>-->
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
 
-            <h1 class="logo mr-auto"><a href="/">Covid Lunches</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
+      <h1 class="logo mr-auto"><a href="/">Covid Lunches</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
 
-            <!--Profile picture-->
-            <img id="Profile_Pic" src={{ profilePic }} alt="Profile" class="profilepic">
+      <!--Profile picture-->
+      <img id="Profile_Pic" src="/img/pumpple.jpg" 
+           alt="Profile" class="profilepic d-none d-lg-block">
+      <script>get_profile_pic();</script>
 
-            <nav class="nav-menu d-none d-lg-block">
-                <ul>
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#events">Pickup</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li class="sign-up text-center"><a href="#sign-up">Sign up</a></li>
-                    <li id="login-btn" class="book-a-table text-center"><a href="#">Login</a></li>
-                    {% include "login.html" %}
-                </ul>
-            </nav><!-- .nav-menu -->
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#events">Pickup</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="sign-up text-center"><a href="#sign-up">Sign up</a></li>
+          <li class="book-a-table text-center"><a href="/login">Login</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
 
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Welcome to <span>Covid Lunches</span></h1>
+          <h2>Humanitarian solution for food insecurity!</h2>
+
+          <div class="btns">
+            <a href="#sign-up" class="btn-signup animated fadeInUp scrollto">Sign up</a>
+            <a href="#login-button" class="btn-book animated fadeInUp scrollto">Login</a>
+          </div>
         </div>
-    </header><!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h1>Welcome to <span>Covid Lunches</span></h1>
-                    <h2>Humanitarian solution for food insecurity!</h2>
-
-                    <div class="btns">
-                        <a href="#sign-up" class="btn-signup animated fadeInUp scrollto">Sign up</a>
-                        <a href="#login-button" class="btn-book animated fadeInUp scrollto">Login</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex align-items-center justify-content-center" data-aos="zoom-in"
-                    data-aos-delay="200">
-                    <a href="https://www.youtube.com/watch?v=eiY4QYiaXuU&ab_channel=MarylandFoodBank"
-                        class="venobox play-btn" data-vbtype="video" data-autoplay="true"></a>
-                </div>
-
-            </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://www.youtube.com/watch?v=eiY4QYiaXuU&ab_channel=MarylandFoodBank" class="venobox play-btn" data-vbtype="video" data-autoplay="true"></a>
         </div>
-    </section><!-- End Hero -->
 
-    <main id="main">
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
 
 
-
-        <!-- ======= About Section ======= -->
-
-        <section id="about" class="about">
-            <div class="container" data-aos="fade-up">
-                <div class="row">
-                    <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="about-img">
-                            <img src="/img/about.jfif" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                        <h3>About our mission.</h3>
-                        <p class="font-italic">
-                            We strive to eliminate hunger for local primary and secondary school attendees, keeping true
-                            to our vision as a humanitarian solution for food insecurity!
-                        </p>
-                        <ul>
-                            <li><i class="icofont-check-circled"></i> Food access for all children with consideration
-                                for allergies.</li>
-                            <li><i class="icofont-check-circled"></i> Government sponsored and free of charge.</li>
-                            <li><i class="icofont-check-circled"></i> Flexible pickup and delivery options.</li>
-                            <li><i class="icofont-check-circled"></i> Centralized hub for all necessary information
-                                regarding food access during the Covid-19 pandemic.</li>
-                        </ul>
-                        <p>
-                            Students in public education (K-12) have less access to receiving lunch
-                            programs in a virtual learning environment. Reduction in transportation,
-                            existing stigmas, and limited school resources, cause difficulties in
-                            implementing lunch programs consistently. <br><br>
-
-                            By creating better access to lunch programs by simplifying the process
-                            for sign-up, allowing flexible management, and consistent access to
-                            updates, will improve students ability to learn, increase trust in the
-                            program, and reduce cost for the community as a whole.
-                        </p>
-                    </div>
-                </div>
+    
+    <!-- ======= About Section ======= -->
+    
+      <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="about-img">
+              <img src="/img/about.jfif" alt="">
             </div>
-        </section> <!-- End About Section -->
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>About our mission.</h3>
+            <p class="font-italic">
+              We strive to eliminate hunger for local primary and secondary school attendees, keeping true to our vision as a humanitarian solution for food insecurity!
+            </p>
+            <ul>
+              <li><i class="icofont-check-circled"></i> Food access for all children with consideration for allergies.</li>
+              <li><i class="icofont-check-circled"></i> Government sponsored and free of charge.</li>
+              <li><i class="icofont-check-circled"></i> Flexible pickup and delivery options.</li>
+              <li><i class="icofont-check-circled"></i> Centralized hub for all necessary information regarding food access during the Covid-19 pandemic.</li>
+            </ul>
+            <p>
+              Students in public education (K-12) have less access to receiving lunch 
+              programs in a virtual learning environment. Reduction in transportation, 
+              existing stigmas, and limited school resources, cause difficulties in 
+              implementing lunch programs consistently. <br><br>
 
-        <!-- ======= Why Us Section ======= -->
-        <!--<section id="why-us" class="why-us">
+              By creating better access to lunch programs by simplifying the process 
+              for sign-up, allowing flexible management, and consistent access to 
+              updates, will improve students ability to learn, increase trust in the 
+              program, and reduce cost for the community as a whole. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> <!-- End About Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <!--<section id="why-us" class="why-us">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Why Us</h2>
@@ -182,11 +177,10 @@
           </div>
         </div>
       </div>
-    </section> -->
-        <!-- End Why Us Section -->
+    </section> --> <!-- End Why Us Section -->
 
-        <!-- ======= Menu Section ======= -->
-        <!--<section id="menu" class="menu section-bg">
+    <!-- ======= Menu Section ======= -->
+    <!--<section id="menu" class="menu section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Menu</h2>
@@ -286,123 +280,108 @@
           </div>
         </div>
       </div>
-    </section> -->
-        <!-- End Menu Section -->
+    </section> --> <!-- End Menu Section -->
 
-        <!-- ======= Resources Section ======= -->
-        <section id="resources" class="resources">
-            <div class="container" data-aos="fade-up">
+    <!-- ======= Resources Section ======= -->
+    <section id="resources" class="resources">
+      <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2>Resources</h2>
-                    <p>Check Out Some Useful Links</p>
+        <div class="section-title">
+          <h2>Resources</h2>
+          <p>Check Out Some Useful Links</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-toggle="tab" href="#tab-1">Baltimore County Government</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-2">Baltimore County Public Schools</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-3">Baltimore City Schools</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-4">211 MD</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-5">Maryland Food Bank</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Baltimore County Government</h3>
+                    <p class="font-italic"><a href="https://www.baltimorecountymd.gov/covid-19/">baltimorecountymd.gov</a></p>
+                    <p>Baltimore County Government provides information on Food Distribution, Assistance, and Covid-19 related inquiries. Please refer here if you to see distribution maps or if you have any questions.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="/img/specials-1.jpg" alt="" class="img-fluid">
+                  </div>
                 </div>
-
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-3">
-                        <ul class="nav nav-tabs flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link active show" data-toggle="tab" href="#tab-1">Baltimore County
-                                    Government</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tab-2">Baltimore County Public Schools</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tab-3">Baltimore City Schools</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tab-4">211 MD</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tab-5">Maryland Food Bank</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-9 mt-4 mt-lg-0">
-                        <div class="tab-content">
-                            <div class="tab-pane active show" id="tab-1">
-                                <div class="row">
-                                    <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>Baltimore County Government</h3>
-                                        <p class="font-italic"><a
-                                                href="https://www.baltimorecountymd.gov/covid-19/">baltimorecountymd.gov</a>
-                                        </p>
-                                        <p>Baltimore County Government provides information on Food Distribution,
-                                            Assistance, and Covid-19 related inquiries. Please refer here if you to see
-                                            distribution maps or if you have any questions.</p>
-                                    </div>
-                                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="/img/specials-1.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab-2">
-                                <div class="row">
-                                    <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>Baltimore County Public Schools</h3>
-                                        <p class="font-italic"><a href="https://www.bcps.org/">bcps.org</a></p>
-                                        <p>BCPS provides useful links on how to obtain free student lunches and what
-                                            foods are served. Nutrition and allergy info are readily provided.</p>
-                                    </div>
-                                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="/img/specials-2.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab-3">
-                                <div class="row">
-                                    <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>Baltimore City Schools</h3>
-                                        <p class="font-italic"><a
-                                                href="https://www.baltimorecityschools.org/meal-sites">baltimorecityschools.org</a>
-                                        </p>
-                                        <p>Baltimore City Schools provides meal and menu information along with an
-                                            interactive map for finding the nearest Grab & Go site! Menus are provided
-                                            in both English and Spanish!</p>
-                                    </div>
-                                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="/img/specials-3.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab-4">
-                                <div class="row">
-                                    <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>211 MD</h3>
-                                        <p class="font-italic"><a href="https://211md.org/">211md.org</a></p>
-                                        <p>211 connects you to essential human services. If you need any help for any
-                                            reason, please consider calling.</p>
-                                    </div>
-                                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="/img/specials-4.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab-5">
-                                <div class="row">
-                                    <div class="col-lg-8 details order-2 order-lg-1">
-                                        <h3>Maryland Food Bank</h3>
-                                        <p class="font-italic"><a
-                                                href="https://mdfoodbank.org/find-food/">mdfoodbank.org</a></p>
-                                        <p>The Maryland Food Bank provides food for Marylanders that are in need of
-                                            assistance. Find the nearest food bank or ask about SNAP Benefits (food
-                                            stamps).</p>
-                                    </div>
-                                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                                        <img src="/img/specials-5.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Baltimore County Public Schools</h3>
+                    <p class="font-italic"><a href="https://www.bcps.org/">bcps.org</a></p>
+                    <p>BCPS provides useful links on how to obtain free student lunches and what foods are served. Nutrition and allergy info are readily provided.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="/img/specials-2.jpg" alt="" class="img-fluid">
+                  </div>
                 </div>
-
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Baltimore City Schools</h3>
+                    <p class="font-italic"><a href="https://www.baltimorecityschools.org/meal-sites">baltimorecityschools.org</a></p>
+                    <p>Baltimore City Schools provides meal and menu information along with an interactive map for finding the nearest Grab & Go site! Menus are provided in both English and Spanish!</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="/img/specials-3.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>211 MD</h3>
+                    <p class="font-italic"><a href="https://211md.org/">211md.org</a></p>
+                    <p>211 connects you to essential human services. If you need any help for any reason, please consider calling.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="/img/specials-4.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Maryland Food Bank</h3>
+                    <p class="font-italic"><a href="https://mdfoodbank.org/find-food/">mdfoodbank.org</a></p>
+                    <p>The Maryland Food Bank provides food for Marylanders that are in need of assistance. Find the nearest food bank or ask about SNAP Benefits (food stamps).</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="/img/specials-5.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
             </div>
-        </section><!-- End Resources Section -->
+          </div>
+        </div>
 
-        <!-- ======= Events Section ======= -->
-        <!-- <section id="events" class="events">
+      </div>
+    </section><!-- End Resources Section -->
+
+    <!-- ======= Events Section ======= -->
+    <!-- <section id="events" class="events">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Events</h2>
@@ -483,11 +462,10 @@
           </div>
         </div>
       </div>
-    </section> -->
-        <!-- End Events Section -->
+    </section> --> <!-- End Events Section -->
 
-        <!-- ======= Book A Table Section ======= -->
-        <!--<section id="book-a-table" class="book-a-table">
+    <!-- ======= Book A Table Section ======= -->
+    <!--<section id="book-a-table" class="book-a-table">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Reservation</h2>
@@ -532,11 +510,10 @@
           <div class="text-center"><button type="submit">Book a Table</button></div>
         </form>
       </div>
-    </section> -->
-        <!-- End Book A Table Section -->
+    </section> --> <!-- End Book A Table Section -->
 
-        <!-- ======= Testimonials Section ======= -->
-        <!--<section id="testimonials" class="testimonials section-bg">
+    <!-- ======= Testimonials Section ======= -->
+    <!--<section id="testimonials" class="testimonials section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Testimonials</h2>
@@ -595,11 +572,10 @@
           </div>
         </div>
       </div>
-    </section> -->
-        <!-- End Testimonials Section -->
+    </section> --> <!-- End Testimonials Section -->
 
-        <!-- ======= Gallery Section ======= -->
-        <!-- <section id="gallery" class="gallery">
+    <!-- ======= Gallery Section ======= -->
+    <!-- <section id="gallery" class="gallery">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Gallery</h2>
@@ -666,11 +642,10 @@
           </div>
         </div>
       </div>
-    </section> -->
-        <!-- End Gallery Section -->
+    </section> --> <!-- End Gallery Section -->
 
-        <!-- ======= Chefs Section ======= -->
-        <!--<section id="chefs" class="chefs">
+    <!-- ======= Chefs Section ======= -->
+    <!--<section id="chefs" class="chefs">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2>Chefs</h2>
@@ -730,190 +705,180 @@
           </div>
         </div>
       </div>
-    </section> -->
-        <!-- End Chefs Section -->
+    </section> --> <!-- End Chefs Section -->
 
-        <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
-            <div class="container" data-aos="fade-up">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2>Contact</h2>
-                    <p>Contact Us</p>
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up">
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>Lol not yet.</p>
+              </div>
+
+              <div class="open-hours">
+                <i class="icofont-clock-time icofont-rotate-90"></i>
+                <h4>Open Hours:</h4>
+                <p>
+                  Monday-Saturday:<br>
+                  11:00 AM - 11:01 AM<br>
+                  Still better hours than the MVA
+                </p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 000 000 0000</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
                 </div>
-            </div>
-
-            <div data-aos="fade-up">
-                <iframe style="border:0; width: 100%; height: 350px;"
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                    frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <div class="container" data-aos="fade-up">
-
-                <div class="row mt-5">
-
-                    <div class="col-lg-4">
-                        <div class="info">
-                            <div class="address">
-                                <i class="icofont-google-map"></i>
-                                <h4>Location:</h4>
-                                <p>Lol not yet.</p>
-                            </div>
-
-                            <div class="open-hours">
-                                <i class="icofont-clock-time icofont-rotate-90"></i>
-                                <h4>Open Hours:</h4>
-                                <p>
-                                    Monday-Saturday:<br>
-                                    11:00 AM - 11:01 AM<br>
-                                    Still better hours than the MVA
-                                </p>
-                            </div>
-
-                            <div class="email">
-                                <i class="icofont-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>info@example.com</p>
-                            </div>
-
-                            <div class="phone">
-                                <i class="icofont-phone"></i>
-                                <h4>Call:</h4>
-                                <p>+1 000 000 0000</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-8 mt-5 mt-lg-0">
-
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="form-row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" data-rule="minlen:4"
-                                        data-msg="Please enter at least 4 chars" />
-                                    <div class="validate"></div>
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" data-rule="email"
-                                        data-msg="Please enter a valid email" />
-                                    <div class="validate"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject" data-rule="minlen:4"
-                                    data-msg="Please enter at least 8 chars of subject" />
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="8" data-rule="required"
-                                    data-msg="Please write something for us" placeholder="Message"></textarea>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
-                        </form>
-
-                    </div>
-
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
                 </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="8" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
 
-            </div>
-        </section><!-- End Contact Section -->
+          </div>
 
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-info">
-                            <h3>Covid Lunches</h3>
-                            <p>
-                                Please wear your mask<br>
-                                and bring an ID. <br><br>
-                                <strong>Phone:</strong> +1 000 000 0000<br>
-                                <strong>Email:</strong> info@example.com<br>
-                            </p>
-                            <div class="social-links mt-3">
-                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Pickup</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Resources</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Pickup</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Delivery</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Recipes</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Allergy Accomodations</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Notifications</h4>
-                        <p>Keep up to date on our efforts!</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
         </div>
 
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Covid Lunches</span></strong>. All Rights Reserved
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Covid Lunches</h3>
+              <p>
+                Please wear your mask<br>
+                and bring an ID. <br><br>
+                <strong>Phone:</strong> +1 000 000 0000<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Pickup</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Resources</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Pickup</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Delivery</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Recipes</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Allergy Accomodations</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Notifications</h4>
+            <p>Keep up to date on our efforts!</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
         </div>
-    </footer><!-- End Footer -->
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Covid Lunches</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="/vendor/php-email-form/validate.js"></script>
-    <script src="/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="/vendor/venobox/venobox.min.js"></script>
-    <script src="/vendor/aos/aos.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+  <script src="/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/venobox/venobox.min.js"></script>
+  <script src="/vendor/aos/aos.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="/js/main.js"></script>
+  <!-- Template Main JS File -->
+  <script src="/js/main.js"></script>
 
 </body>
 

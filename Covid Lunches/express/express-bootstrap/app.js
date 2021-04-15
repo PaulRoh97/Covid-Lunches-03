@@ -36,6 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', covid)
 
 
+app.get('/config.js', function (req, res) {
+    res.sendFile(__dirname + '/config.js');
+});
 let server = http.createServer(app)
 
 
