@@ -158,6 +158,30 @@
     return false;
   });
 
+  // Picture Menu isotope and filter
+  $(window).on('load', function() {
+    var pictureMenuIsotope = $('.picture-menu-container').isotope({
+      itemSelector: '.picture-menu-item'
+    });
+
+    $('#picture-menu-flters li').on('click', function() {
+      $("#picture-menu-flters li").removeClass('filter-active');
+      $(this).addClass('filter-active');
+
+      pictureMenuIsotope.isotope({
+        filter: $(this).data('filter')
+      });
+      aos_init();
+    });
+    
+    // Initiate venobox (lightbox feature used in portofilo)
+    $(document).ready(function() {
+      $('.venobox').venobox({
+        'share': false
+      });
+    });
+  });
+
   // Menu list isotope and filter
   $(window).on('load', function() {
     var menuIsotope = $('.menu-container').isotope({
