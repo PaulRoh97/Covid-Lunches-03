@@ -1,5 +1,8 @@
 var express = require('express')
 const db = require('../models')
+
+const accounts = require("../controllers/account.controller.js");
+
 var router = express.Router()
 
 // // middleware that is specific to this router
@@ -43,9 +46,6 @@ router.get('/login', async function (req, res) {
     //console.log('in get function')
     res.render('login.njk')   
 })
-router.get('/inner-page', function (req, res) {
-    //console.log('in get function')
-    res.render('inner-page.njk')   
-})
+router.get('/inner-page', accounts.validate)
 
 module.exports = router;
