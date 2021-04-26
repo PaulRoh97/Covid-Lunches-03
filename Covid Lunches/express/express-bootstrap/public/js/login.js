@@ -1,125 +1,77 @@
-// get the modal
-let modal = document.getElementById("modal")
-// get the element that is not the login form
-let container = document.getElementById("container")
-// get the button that opens the login form
-let loginBtn = document.getElementById("login-btn")
-// grab the login button
-let loginFormBtn = document.getElementById('login-form-btn')
+const NEW_PASS = 0,
+    CONFIRM_PASS = 1,
+    MAIL_FORMAT = /^(([^<>()\[\]\\.,'{}?+-_!@#$%*;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    PASS_FORMAT = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*.]{8,26}$/
 
-// open the pop-up login form when the user clicks on the login button
-loginBtn.onclick = function () {
-    modal.style.display = "block"
-}
 
-// close the login form when user clicks outside of it and cleans up input fields
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none"
-        document.getElementById('email').value = ''
-        document.getElementById('password').value = ''
-        clearError('email-alert')
-        clearError('pass-alert')
-    }
-}
-
-// validate email and password upon login attempt
-loginFormBtn.onclick = function () {
+document.querySelector('.sign-in-btn').addEventListener('click', (event) => {
+    event.preventDefault()
+    clearError('alert-danger')
+    emptyFields = fieldsEmpty()
     emailValidated = validateEmail()
-    passwordValidated = validatePassword()
 
-    if (emailValidated && passwordValidated) {
-        location.href = "/inner-page"
+    if (!emptyFields && emailValidated) {
+        // save to database
+        location.href = '/inner-page'
     }
-}
+})
 
-// validate email address
-function validateEmail() {
-    // // grab the email input field
-    // let emailField = document.getElementById('email')
-    // let mailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    // let errorMessage = ''
+function fieldsEmpty() {
+    let inputFields = document.getElementsByTagName('input')
+    let errorMessage = 'Please fill in all fields.',
+        errorType = 'd-flex justify-content-center input-alert',
+        parentElement = 'forms',
+        childElement = 'first-form'
 
-    // if (emailField.value.match(mailFormat)) {
-    //     clearError('email-alert')
-    //     return true
-    // } else if (emailField.value == '') {
-    //     errorMessage = 'Please enter an email address.'
-    // } else {
-    //     errorMessage = 'Invalid email address. Please try again.'
-    // }
-    // showError(errorMessage, 'email-alert', 'email')
-    // return false
-    // grab the email input field
-    let emailField = document.getElementById('email')
-    let mailFormat = /^(([^<>()\[\]\\.,'{}?+-_!@#$%*;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    let errorMessage = ''
-
-    if (emailField.value.match(mailFormat)) {
-        clearError('email-alert')
-        return true
-    } else if (emailField.value == '') {
-        errorMessage = 'Please enter an email address.'
-    } else {
-        errorMessage = 'Invalid email address. Please try again.'
+    // check if input fields are empty
+    for (let i = 0; i < inputFields.length; i++) {
+        if (inputFields[i].value === '') {
+            showError(errorMessage, errorType, parentElement, childElement)
+            return true
+        }
     }
-    showError(errorMessage, 'email-alert', 'email')
     return false
 }
 
-// validate password
-function validatePassword() {
-    // // grab the password input field
-    let passField = document.getElementById('password')
-    // let passFormat = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/
-    // let errorMessage = ''
+function validateEmail() {
+    let emailField = document.getElementById('email'),
+        errorMessage = 'Invalid email address. Please try again.',
+        errorType = 'email-alert',
+        parentElement = 'forms',
+        childElement = 'first-form'
 
-    // if (passField.value.match(passFormat)) {
-    //     clearError('pass-alert')
-    // } else if (passField.value == '') {
-    //     errorMessage = 'Please enter a password.'
-    // } else {
-    //     errorMessage = 'Password must be 8 to 16 characters and contain at least one numeric digit and a special character.'
-    // }
-    // showError(errorMessage, 'pass-alert', 'password')
-    // return true
-    if (passField.value.length >= 8) {
-        clearError('pass-alert')
+    if (emailField.value.match(MAIL_FORMAT))
         return true
-    }
-    let errorMessage = 'Please enter a password.',
-        errorType = 'pass-alert',
-        element = 'password'
-
-    showError(errorMessage, errorType, element)
+    if (emailField.value !== '')
+        showError(errorMessage, errorType, parentElement, childElement)
     return false
 }
 
 // display error message
-function showError(errorMessage, errorType, element) {
-    // create a div
-    const errorDiv = document.createElement('div')
-    errorDiv.className = `${errorType} alert-danger`
-
-    // get elements
-    const card = document.querySelector(`.${element}`)
-    const inputField = document.querySelector(`#${element}`)
-
-    // create text node and append to div
-    errorDiv.appendChild(document.createTextNode(errorMessage))
-    errorDiv.style.color = 'red'
-
-    // insert error message above input field
-    card.insertBefore(errorDiv, inputField)
-
-    // clear errors
-    if (document.getElementsByClassName(errorType).length > 1) {
-        clearError(errorType)
+function showError(errorMessage, errorType, parentElement, childElement) {
+    errorDivs = document.getElementsByClassName('alert-danger')
+    // only show the errors if there aren't any being showed already
+    if (errorDivs.length == 0) {
+        // create a div
+        const errorDiv = document.createElement('div')
+        errorDiv.className = `${errorType} alert-danger`
+        // get elements
+        const inputField = document.querySelector(`#${childElement}`)
+        // create text node and append to div
+        errorDiv.appendChild(document.createTextNode(errorMessage))
+        errorDiv.style.color = 'red'
+        errorDiv.style.paddingLeft = '5px'
+        errorDiv.style.paddingRight = '5px'
+        errorDiv.style.marginBottom = '20px'
+        errorDiv.style.borderRadius = '5px'
+        // insert error message above input field
+        document.querySelector(`.${parentElement}`).insertBefore(errorDiv, inputField)
     }
 }
 
 function clearError(errorType) {
-    if (document.getElementsByClassName(`${errorType}`).length >= 1) {
-        document.querySelector(`.${errorType}`).remove()
-    }
+    errorDivs = document.getElementsByClassName(`${errorType}`)
+    // remove all error messages
+    for (let i = errorDivs.length - 1; i >= 0; i--)
+        errorDivs[i].remove()
 }
