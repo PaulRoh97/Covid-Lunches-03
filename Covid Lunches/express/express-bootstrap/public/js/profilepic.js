@@ -30,7 +30,7 @@ function get_profile_pic() {
 
     var pictures = document.querySelectorAll(".profilepic");
     for (i = 0; i < pictures.length; i++){
-        console.log('Checking profile pic #' + pictures[i].src);
+        console.log('Checking profile pic #' + i);
 
         if (is_valid_pic_extension(pictures[i].src)) {
 
