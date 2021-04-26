@@ -1,5 +1,7 @@
 
-var schedule_table = [[3, "02/01/20",  "2:00 am", 0]];
+var schedule_table = [[1, "02/01/20",  "2:00 am", 0],
+                      [2, "05/01/20",  "4:00 pm", 1],
+                      [4, "02/01/21",  "6:00 pm", 2]];
 
 /*Add in the contents for the schedule table */
 function addTableContents(){
@@ -32,6 +34,6 @@ function addTableContents(){
              document.write('<td><span class="dot\"></span></td>');
         }
 
-        document.write("/tr");
+        document.write("</tr>");
     }
 }
