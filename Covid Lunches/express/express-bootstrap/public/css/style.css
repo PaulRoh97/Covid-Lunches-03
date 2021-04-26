@@ -1132,6 +1132,145 @@ body {
   }
   
   /*--------------------------------------------------------------
+# Menu
+--------------------------------------------------------------*/
+.picture-menu {
+  background: url("../img/gallery/gallery-2.jpg");
+  background-size: cover;
+  position: relative;
+  padding: 80px 0;
+}
+
+.picture-menu:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.picture-menu .picture-menu-item {
+  margin-bottom: 30px;
+}
+
+.picture-menu #picture-menu-flters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.picture-menu #picture-menu-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 15px 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #e4dcdc;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+}
+
+.picture-menu #picture-menu-flters li:hover, .picture-menu #picture-menu-flters li.filter-active {
+  color: #151515;
+  background: #ffc451;
+}
+
+.picture-menu #picture-menu-flters li:last-child {
+  margin-right: 0;
+}
+
+.picture-menu .picture-menu-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(21, 21, 21, 0.6);
+}
+
+.picture-menu .picture-menu-wrap::before {
+  content: "";
+  background: rgba(21, 21, 21, 0.6);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.picture-menu .picture-menu-wrap img {
+  transition: all ease-in-out 0.3s;
+}
+
+.picture-menu .picture-menu-wrap .picture-menu-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.picture-menu .picture-menu-wrap .picture-menu-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.picture-menu .picture-menu-wrap .picture-menu-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+}
+
+.picture-menu .picture-menu-wrap .picture-menu-links {
+  text-align: center;
+  z-index: 4;
+}
+
+.picture-menu .picture-menu-wrap .picture-menu-links a {
+  color: #fff;
+  margin: 0 5px 0 0;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.picture-menu .picture-menu-wrap .picture-menu-links a:hover {
+  color: #ffc451;
+}
+
+.picture-menu .picture-menu-wrap:hover::before {
+  opacity: 1;
+}
+
+.picture-menu .picture-menu-wrap:hover img {
+  transform: scale(1.2);
+}
+
+.picture-menu .picture-menu-wrap:hover .picture-menu-info {
+  opacity: 1;
+}
+
+  /*--------------------------------------------------------------
   # Events
   --------------------------------------------------------------*/
   .events {
