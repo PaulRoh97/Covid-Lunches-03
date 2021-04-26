@@ -532,6 +532,7 @@ body {
   ---------------------------*/
   .pickup_table{
     background-color:#cda45e;
+    border: 1px solid black;
   }
 
   .pickup_table .dot{
