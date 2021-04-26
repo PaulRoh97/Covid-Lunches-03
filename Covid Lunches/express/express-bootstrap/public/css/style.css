@@ -526,7 +526,31 @@ body {
   .mobile-nav-active .mobile-nav-toggle i {
     color: #fff;
   }
-  
+
+  /*--------------------------
+  # Schedule Pickup Table
+  ---------------------------*/
+  .pickup_table{
+    background-color:#cda45e;
+  }
+
+  .pickup_table .dot{
+    border: 1px solid black;
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .pickup_table .incomplete{
+    background-color: rgb(238, 12, 12);
+  }
+
+  .pickup_table .complete{
+    background-color: rgb(13, 187, 36);
+  }
+
   /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
