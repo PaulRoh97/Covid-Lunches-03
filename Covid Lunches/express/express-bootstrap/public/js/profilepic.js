@@ -23,27 +23,41 @@ function is_valid_pic_path(picPath, callback) {
     picture.onerror = function () { callback(false); };
 }
 
-/* the src of the image is the profile picture in the database*/
+/* is image from database plausible? If not, we have default.*/
 function get_profile_pic() {
 
-    var src = "img/chefs/chefs-1.jpg";
-    //var src = "../public/img/chefs/chef.jpg";
-    //var src = "../public/img/chefs/chefs-1.txt";
+    var default_src = "/img/pumpple.jpg";
 
-    console.log('Checking profile pic' + src);
+    var pictures = document.querySelectorAll(".profilepic");
+    for (i = 0; i < pictures.length; i++){
+        console.log('Checking profile pic #' + pictures[i].src);
 
-    if (is_valid_pic_extension(src)) {
-        is_valid_pic_path(src, function (exists) {
-            if (exists) {
+        if (is_valid_pic_extension(pictures[i].src)) {
 
-                /*update any profile pics if multiple pictures are shown*/
-                var pictures = document.querySelectorAll(".profilepic");
-                console.log('Profile pic elements on page: ' + pictures.length);
-                for (i = 0; i < pictures.length; i++){
-                    pictures[i].src = src;
+            //show default picture if not loaded
+            is_valid_pic_path(pictures[i].src, function (exists) {
+                if (!exists) {
+
+                    /*update any profile pics if multiple pictures are shown*/
+                    //var pictures = document.querySelectorAll(".profilepic");
+                    console.log('Incorrect path exists');
+                    for (j = 0; j < pictures.length; j++){
+                        pictures[j].src = default_src;
+                    }
+                    return;
                 }
+            })
+        }
+
+        //show default picture if wrong extension
+        else{
+            //var pictures = document.querySelectorAll(".profilepic");
+            console.log('Incorrect extension');
+            for (j = 0; j < pictures.length; j++){
+                pictures[j].src = default_src;
             }
-        })
+            return;
+        }
     }
 
 }

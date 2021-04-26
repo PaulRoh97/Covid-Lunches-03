@@ -43,9 +43,20 @@ router.get('/login', async function (req, res) {
     //console.log('in get function')
     res.render('login.njk')   
 })
-router.get('/inner-page', function (req, res) {
+router.get('/inner-page', async function (req, res) {
     //console.log('in get function')
-    res.render('inner-page.njk')   
+
+    //Connect profilePic to user's profilePic
+    const user = await db.accounts.findOne({
+        where: {
+            email: 'test@test.com'
+        }
+    })
+    res.render('inner-page.njk', {
+
+        profilePic: user.profilePic,
+
+    })
 })
 
 module.exports = router;
