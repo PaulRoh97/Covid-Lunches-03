@@ -41,19 +41,16 @@ body {
 }
 
 .sign-in-btn {
-    background: #cda45e;
-    border-color: #cda45e;
+    background: #cda45e !important;
+    border: none !important;
 }
 
 .sign-in-btn:hover {
-    background: #a1844c;
-    border-color: #a1844c;;
+    background: #a1844c !important;
 }
 
 .sign-in-btn:focus {
-    background: #a1844c;
-    border-color: #a1844c;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .form-signin .checkbox {
@@ -65,27 +62,23 @@ body {
 }
 
 .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    margin-bottom: -1px !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
 }
 
 .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    margin-bottom: 10px !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
 }
 
 .form-signin input[type="email"]:focus {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    box-shadow: none;
+    border-color: #cda45e !important;
+    box-shadow: none !important;
 }
 
 .form-signin input[type="password"]:focus {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    box-shadow: none;
+    border-color: #cda45e !important;
+    box-shadow: none !important;
 }
