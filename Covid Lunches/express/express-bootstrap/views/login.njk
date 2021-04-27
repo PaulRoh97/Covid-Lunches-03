@@ -21,17 +21,17 @@
 <body class="text-center">
     <div class="container rounded bg-white">
         <main class="form-signin">
-            <form class="forms needs-validation" novalidate>
+            <form class="forms" method="POST" action="/sign-in">
                 {# Icon made by Pause08 from www.flaticon.com #}
                 <img class="mb-4" src="/img/dish.svg" alt="" width="72" height="57">
                 <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
-                <div id="first-form" class="email form-floating">
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <div id="first-form" class="form-floating">
+                    <input id="email" type="email" name="email" class="form-control" placeholder="Email address">
                     <label for="floatingInput">Email address</label>
                 </div>
-                <div class="password form-floating">
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                 </div>
 

@@ -5,7 +5,7 @@ const NEW_PASS = 0,
 
 
 document.querySelector('.sign-in-btn').addEventListener('click', (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     clearError('alert-danger')
     emptyFields = fieldsEmpty()
     emailValidated = validateEmail()
