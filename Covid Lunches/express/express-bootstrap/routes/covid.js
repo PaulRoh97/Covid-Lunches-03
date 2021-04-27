@@ -11,6 +11,14 @@ var router = express.Router()
 //     next()
 // })
 
+router.post('/sign-in', (req, res) => {
+    // Insert Login Code Here
+    const email = req.body.email
+    const password = req.body.password
+    console.log(email, password)
+    res.send(`Username: ${email} Password: ${password}`)
+})
+
 router.get('/', async function (req, res) {
 
     const user = await db.accounts.findOne({
