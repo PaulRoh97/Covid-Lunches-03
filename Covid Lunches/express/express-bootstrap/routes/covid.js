@@ -46,6 +46,14 @@ router.get('/login', async function (req, res) {
     //console.log('in get function')
     res.render('login.njk')   
 })
+router.get('/sign-up', async function (req, res) {
+    //console.log('in get function')
+    res.render('sign-up.njk')
+})
+router.get('/student-info', async function (req, res) {
+    //console.log('in get function')
+    res.render('sign-up-student-info-page.njk')
+})
 router.get('/inner-page', accounts.validate)
 
 module.exports = router;
