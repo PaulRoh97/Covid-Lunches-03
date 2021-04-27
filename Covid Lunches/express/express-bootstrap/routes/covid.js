@@ -64,4 +64,13 @@ router.get('/inner-page', async function (req, res) {
     })
 })
 
+router.get('/sign-up', async function (req, res) {
+    //console.log('in get function')
+    res.render('sign-up.njk')
+})
+router.get('/student-info', async function (req, res) {
+    //console.log('in get function')
+    res.render('sign-up-student-info-page.njk')
+})
+
 module.exports = router;

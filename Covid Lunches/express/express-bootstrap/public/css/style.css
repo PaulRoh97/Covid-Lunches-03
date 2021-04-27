@@ -9,8 +9,8 @@
 # General
 --------------------------------------------------------------*/
 body {
-    font-family: "Open Sans", sans-serif;
-    background: #eee2dc;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
     color: #fff;
   }
   
@@ -176,8 +176,8 @@ body {
   
   #header.header-scrolled {
     top: 0;
-    background: rgba(233, 143, 143, 0.85);
-    border-bottom: 1px solid #37332a;
+    background: rgba(148, 127, 84, 0.85);
+    border-bottom: 1px solid #81662f;
   }
   
   #header .logo {
@@ -237,7 +237,7 @@ body {
     color: white;
     transition: 0.3s;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
   }
   
   .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -1113,7 +1113,7 @@ body {
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: rgb(230, 165, 165);
+    color: rgb(94, 90, 90);
   }
   
   .resources .details p {
@@ -1812,6 +1812,7 @@ body {
     font-weight: 500;
     margin-bottom: 5px;
     font-family: "Poppins", sans-serif;
+    color: #cda45e;
   }
   
   .contact .info p {
@@ -1882,9 +1883,10 @@ body {
     border-radius: 0;
     box-shadow: none;
     font-size: 14px;
-    background: #e9bfbf;
-    border-color: #363126;
-    color: white;
+    background: #f8f8f8;
+    border-color: #adadad;
+    border-radius: 2px;
+    color: #5c5c5c;
   }
   
   .contact .php-email-form input::-webkit-input-placeholder, .contact .php-email-form textarea::-webkit-input-placeholder {
@@ -1954,16 +1956,16 @@ body {
   # Footer
   --------------------------------------------------------------*/
   #footer {
-    background: rgb(231, 203, 192);
+    background: rgb(255, 255, 255);
     padding: 0 0 30px 0;
-    color: #fff;
+    color: #99701d;
     font-size: 14px;
   }
   
   #footer .footer-top {
-    background: #eb857e;
-    border-top: 1px solid #835f19;
-    border-bottom: 1px solid #835f19;
+    background: #eb918b;
+    border-top: 1px solid #ad883e;
+    border-bottom: 1px solid #ad883e;
     padding: 60px 0 30px 0;
   }
   
@@ -2030,7 +2032,7 @@ body {
   
   #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #cda45e;
+    color: #99701d;
     font-size: 18px;
     line-height: 1;
   }
