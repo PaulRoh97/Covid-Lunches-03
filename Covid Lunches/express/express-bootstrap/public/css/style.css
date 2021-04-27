@@ -542,22 +542,18 @@ body {
   }
 
   .pickup_table .dot{
-    border: 1px solid black;
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
+    color: #555;
+
   }
 
   tr:hover {background-color:#f5f5f5;}
 
   .pickup_table .incomplete{
-    background-color: rgb(238, 12, 12);
+    color: rgb(238, 12, 12);
   }
 
   .pickup_table .complete{
-    background-color: rgb(13, 187, 36);
+    color: rgb(42, 187, 61);
   }
 
   /*--------------------------------------------------------------

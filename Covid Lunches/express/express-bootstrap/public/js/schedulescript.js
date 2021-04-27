@@ -6,18 +6,19 @@ var schedule_table = [[1, "02/01/20",  "2:00 am", 0],
 
 /*Add an alert if there is a late pickup */
 function addAlerts(){
+
+    var scheduleTable = document.getElementById("pickup-table");
     
-    var table_size = schedule_table.length
-    for(i = 0; i < table_size; i++){
+    var rows = scheduleTable.getElementsByTagName("tr");
+    for(var i = 1; i < rows.length; i++){
+        console.log('Checking alerts to row #' + i);
 
-        console.log('Checking alerts to ' + (i + 1) + 'th entree to table');
-
-        var entry_id = schedule_table[i][0];
-        var entry_status = schedule_table[i][3];
-        if(entry_status == 1){
-            document.write('<div class="alert alert-danger alert-dismissible"> \
+        var row_id = rows[i].cells[0].innerText;
+        var row_status = rows[i].cells[3].innerText;
+        if(row_status == "Late"){
+            document.getElementById('Alerts').insertAdjacentHTML('beforebegin', '<div class="alert alert-danger alert-dismissible"> \
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> \
-            <strong> Warning: </strong> Entry ' + entry_id + ' Has not been picked up!</div>');
+            <strong> Warning: </strong> Entry ' + row_id + ' Has not been picked up!</div>');
         }
     }
 }
@@ -44,13 +45,13 @@ function addTableContents(){
 
         /*status: write a dot based on value*/
         if(entry_status == 0){
-            document.write('<td id="schedule_status"><span class="dot complete"></span></td>');
+            document.write('<td id="schedule_status" class="dot complete"> Received Pickup </td>');
         }
         else if(entry_status == 1){
-            document.write('<td id="schedule_status"><span class="dot incomplete"></span></td>');
+            document.write('<td id="schedule_status" class="dot incomplete"> Late </td>');
         }
         else{
-             document.write('<td id="schedule_status"><span class="dot\"></span></td>');
+             document.write('<td id="schedule_status" class="dot"> Awaiting Pickup </td>');
         }
 
         document.write("</tr>");
