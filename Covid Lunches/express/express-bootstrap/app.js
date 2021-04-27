@@ -1,21 +1,30 @@
-let express = require('express')
+const express = require('express'),
+    http = require('http'),
+    nunjucks = require('nunjucks'),
+    mysql = require('mysql'),
+    path = require('path'),
+    sassMiddleware = require('node-sass-middleware'),
+    covid = require('./routes/covid'),
+    Sequelize = require('sequelize'),
+    db = require('./models')
 
-let http = require('http')
-let nunjucks = require('nunjucks')
-let mysql = require('mysql')
-let path = require('path')
-let sassMiddleware = require('node-sass-middleware')
-let covid = require('./routes/covid')
-let Sequelize = require('sequelize')
-let db = require('./models')
 db.sequelize.sync()
 
-let app = express()
-// const {gethomepage} = require('./routes/index')
-// const {getloginpage} = require('./routes/start')
+const app = express(),
+    bodyParser = require('body-parser'),
+    options = require('./options.js')
 
-var options = require('./options.js');
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
 
+app.post('/sign-in', (req, res) => {
+    // Insert Login Code Here
+    const email = req.body.email
+    const password = req.body.password
+    console.log(email, password)
+    res.send(`Username: ${email} Password: ${password}`)
+})
 
 nunjucks.configure('views', {
   autoescape: true,
@@ -32,15 +41,13 @@ app.use(sassMiddleware({
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-
 app.use('/', covid)
 
-
 app.get('/config.js', function (req, res) {
-    res.sendFile(__dirname + '/config.js');
-});
-let server = http.createServer(app)
+    res.sendFile(__dirname + '/config.js')
+})
 
+const server = http.createServer(app)
 
 server.listen('3000', () => {
   console.log('Listening on port 3000')
