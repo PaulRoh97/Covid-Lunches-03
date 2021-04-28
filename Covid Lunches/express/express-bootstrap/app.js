@@ -8,6 +8,7 @@ let sassMiddleware = require('node-sass-middleware')
 let covid = require('./routes/covid')
 let Sequelize = require('sequelize')
 let db = require('./models')
+const bodyParser = require('body-parser')
 db.sequelize.sync()
 
 let app = express()
@@ -22,6 +23,11 @@ nunjucks.configure('views', {
   express: app
 })
 
+
+
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
 
 app.use(sassMiddleware({
   src: path.join(__dirname, 'bootstrap'),

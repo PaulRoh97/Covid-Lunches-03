@@ -73,4 +73,6 @@ router.get('/student-info', async function (req, res) {
     res.render('sign-up-student-info-page.njk')
 })
 
+router.post('/sign-in', accounts.validate)
+
 module.exports = router;
