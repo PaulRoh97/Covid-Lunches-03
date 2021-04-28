@@ -15,6 +15,7 @@
     "mysql2": "^2.2.5",
     "node-sass-middleware": "^0.11.0",
     "nunjucks": "^3.2.3",
+    "sass": "^1.32.11",
     "sequelize": "^6.6.2"
   },
   "bugs": {
