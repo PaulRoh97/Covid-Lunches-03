@@ -12,23 +12,14 @@ const bodyParser = require('body-parser')
 db.sequelize.sync()
 
 let app = express()
-// const {gethomepage} = require('./routes/index')
-// const {getloginpage} = require('./routes/start')
 
 var options = require('./options.js');
 
-const bodyParser = require('body-parser')
-
-app.use(bodyParser.urlencoded({
-    extended: false
-}))
 
 nunjucks.configure('views', {
   autoescape: true,
   express: app
 })
-
-
 
 app.use(bodyParser.urlencoded({
     extended: false
