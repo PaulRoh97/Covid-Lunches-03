@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="/img/favicon.jpg" rel="icon">
+    <link href="/img/dish.svg" rel="icon">
     <link href="/img/apple-touch-icon.jpg" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -73,11 +73,11 @@
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#resources">Resources</a></li>
-                    <li><a href="#events">Pickup</a></li>
+                    <li><a href="#picture-menu">Menu</a></li>
+                    <!-- <li><a href="#events">Pickup</a></li> -->
                     <li><a href="#contact">Contact</a></li>
-                    <li class="sign-up text-center"><a href="#sign-up">Sign up</a></li>
-                    <li id="login-btn" class="login-button text-center"><a href="#">Login</a></li>
-                    {% include "login.njk" %}
+                    <li class="sign-up text-center"><a href="/sign-up">Sign up</a></li>
+                    <li class="login-button text-center"><a href="/login">Login</a></li>
                 </ul>
             </nav><!-- .nav-menu -->
 
@@ -93,8 +93,8 @@
                     <h2>Humanitarian solution for food insecurity!</h2>
 
                     <div class="btns">
-                        <a href="#sign-up" class="btn-signup animated fadeInUp scrollto">Sign up</a>
-                        <a href="#login-button" class="login-button btn-book animated fadeInUp scrollto">Login</a>
+                        <a href="/sign-up" class="btn-signup animated fadeInUp scrollto">Sign up</a>
+                        <a href="/login" class="login-button btn-book animated fadeInUp scrollto">Login</a>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex align-items-center justify-content-center" data-aos="zoom-in"
@@ -185,109 +185,7 @@
     </section> -->
         <!-- End Why Us Section -->
 
-        <!-- ======= Menu Section ======= -->
-        <!--<section id="menu" class="menu section-bg">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Menu</h2>
-          <p>Check Our Tasty Menu</p>
-        </div>
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="menu-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-starters">Starters</li>
-              <li data-filter=".filter-salads">Salads</li>
-              <li data-filter=".filter-specialty">Specialty</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-6 menu-item filter-starters">
-            <img src="/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Lobster Bisque</a><span>$5.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="/img/menu/bread-barrel.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Bread Barrel</a><span>$6.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-starters">
-            <img src="/img/menu/cake.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Crab Cake</a><span>$7.95</span>
-            </div>
-            <div class="menu-ingredients">
-              A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-salads">
-            <img src="/img/menu/caesar.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Caesar Selections</a><span>$8.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Tuscan Grilled</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-starters">
-            <img src="/img/menu/mozzarella.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Mozzarella Stick</a><span>$4.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-salads">
-            <img src="/img/menu/greek-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Greek Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach, crisp romaine, tomatoes, and Greek olives
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-salads">
-            <img src="/img/menu/spinach-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Spinach Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="/img/menu/lobster-roll.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Lobster Roll</a><span>$12.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-        <!-- End Menu Section -->
+        
 
         <!-- ======= Resources Section ======= -->
         <section id="resources" class="resources">
@@ -400,6 +298,150 @@
 
             </div>
         </section><!-- End Resources Section -->
+
+        <!-- ======= Menu Section ======= -->
+        <section id="picture-menu" class="picture-menu">
+          <div class="container" data-aos="fade-up">
+            
+            <div class="section-title">
+              <h2>Menu</h2>
+              <p>Check Out Today's Menu Items</p>
+            </div>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="picture-menu-flters">
+                  <li data-filter="*" id="menu-all" class="filter-active">All</li>
+                  <li data-filter=".filter-entree" id="menu-entree">Entree</li>
+                  <li data-filter=".filter-side" id="menu-side">Side</li>
+                  <li data-filter=".filter-beverage" id="menu-beverage">Beverage</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row picture-menu-container" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-beverage">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/boba.jpg" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Beverage 1</h4>
+                    <p>Beverage</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/boba.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-entree">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/mozzarella.jpg" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Entree 1</h4>
+                    <p>Entree</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/mozzarella.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-side">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/spinach-salad.jpg" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Side 1</h4>
+                    <p>Side</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/spinach-salad.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-entree">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/lobster-roll.jpg" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Entree 2</h4>
+                    <p>Entree</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/lobster-roll.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-beverage">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/water.jpg" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Beverage 2</h4>
+                    <p>Beverage</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/water.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-side">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/cake.jpg" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Side 2</h4>
+                    <p>Side</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/cake.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-entree">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/tuscan-grilled.jpg" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Entree 3</h4>
+                    <p>Entree</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/tuscan-grilled.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-beverage">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/juice.png" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Beverage 3</h4>
+                    <p>Beverage</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/juice.png" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6 picture-menu-item filter-side">
+                <div class="picture-menu-wrap">
+                  <img src="/img/menu/carrot.jpg" class="img-fluid" alt="">
+                  <div class="picture-menu-info">
+                    <h4>Side 3</h4>
+                    <p>Side</p>
+                    <div class="picture-menu-links">
+                      <a href="/img/menu/carrot.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section><!-- End Menu Section -->
 
         <!-- ======= Events Section ======= -->
         <!-- <section id="events" class="events">
