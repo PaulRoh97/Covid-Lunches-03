@@ -30,6 +30,7 @@
 
   <script type="text/javascript" src="/js/profilepic.js"></script>
   <script type="text/javascript" src="/js/mapscript.js"></script>
+  <script type="text/javascript" src="/js/schedulescript.js"></script>
   <script type='text/javascript' src='/config.js'></script>
 
   <script type="text/javascript" src="/testing/sample_locations.js"></script>
@@ -108,6 +109,8 @@
     <section class="inner-page">
       <div class="container-fluid">
 
+        <div id = 'Alerts'></div>
+
         <!--Map + location label-->
         <div class="container">
         <h2> You're Location is at: </h2>
@@ -120,6 +123,28 @@
         <p>
           Example inner page template
         </p>
+
+        <!--Pickup Table-->
+        <div class="container-fluid table-responsive">
+          <table id = "pickup-table" class="pickup_table table table-bordered">
+            <thead>
+              <tr>
+                <th> ID </th>
+                <th> Date </th>
+                <th> Time </th>
+                <th> Status </th>
+              </tr>
+              <tbody>
+
+                <!--Entrees vary in length, so put into function-->
+                <script>addTableContents()</script>
+              
+              </tbody>
+            </thead>
+          </table>
+        </div>
+        <script>addAlerts()</script>
+      
       </div>
     </section>
 
