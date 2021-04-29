@@ -134,24 +134,23 @@ exports.deleteAll = (req, res) => {
 };
 
 exports.validate = (req, res) => {
-  const email = req.query.email;
-  var condition = email ? { email: { [Op.like]: `%${email}%` } } : null;
+  const email = req.body.email;
+  const password = req.body.password;
+  //var condition = email ? { email: { [Op.like]: `%${email}%` } } : null;
 
-  Account.findOne({ where: condition })
+  Account.findOne({ where: {email: email} })
     .then(data => {
-        console.log(data.password);
-        res.render('inner-page.njk');
-    //   if(data.password == "test@test.com"){
-    //     res.render('inner-page.njk');   
-    //   }else{
-    //     res.sendStatus(404);
-    //   }
-        // res.send(data);
+        if(data.password == password){
+          res.redirect('/inner-page');
+        }else{
+          res.redirect('/login');
+        }
+        
     })
     .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving tutorials."
-      });
+      console.log(err.message);
+      res.redirect('/login');
     });
+  
+
 };

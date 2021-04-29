@@ -46,6 +46,24 @@ router.get('/login', async function (req, res) {
     //console.log('in get function')
     res.render('login.njk')   
 })
+
+//router.get('/inner-page', accounts.validate)
+router.get('/inner-page', async function (req, res) {
+    //console.log('in get function')
+
+    //Connect profilePic to user's profilePic
+    const user = await db.accounts.findOne({
+        where: {
+            email: 'test@test.com'
+        }
+    })
+    res.render('inner-page.njk', {
+
+        profilePic: user.profilePic,
+
+    })
+})
+
 router.get('/sign-up', async function (req, res) {
     //console.log('in get function')
     res.render('sign-up.njk')
@@ -54,6 +72,7 @@ router.get('/student-info', async function (req, res) {
     //console.log('in get function')
     res.render('sign-up-student-info-page.njk')
 })
-router.get('/inner-page', accounts.validate)
+
+router.post('/sign-in', accounts.validate)
 
 module.exports = router;

@@ -3,16 +3,14 @@ const NEW_PASS = 0,
     MAIL_FORMAT = /^(([^<>()\[\]\\.,'{}?+-_!@#$%*;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     PASS_FORMAT = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*.]{8,26}$/
 
-
 document.querySelector('.sign-in-btn').addEventListener('click', (event) => {
-    // event.preventDefault()
     clearError('alert-danger')
     emptyFields = fieldsEmpty()
     emailValidated = validateEmail()
 
-    if (!emptyFields && emailValidated) {
-        // save to database
-        location.href = '/inner-page'
+    // prevent actually submitting the form if everything is not yet validated
+    if (emptyFields || !emailValidated) {
+        event.preventDefault()
     }
 })
 
@@ -40,8 +38,9 @@ function validateEmail() {
         parentElement = 'forms',
         childElement = 'first-form'
 
-    if (emailField.value.match(MAIL_FORMAT))
+    if (emailField.value.match(MAIL_FORMAT)) {
         return true
+    }
     if (emailField.value !== '')
         showError(errorMessage, errorType, parentElement, childElement)
     return false
@@ -55,7 +54,7 @@ function showError(errorMessage, errorType, parentElement, childElement) {
         // create a div
         const errorDiv = document.createElement('div')
         errorDiv.className = `${errorType} alert-danger`
-        // get elements
+        // get email input field
         const inputField = document.querySelector(`#${childElement}`)
         // create text node and append to div
         errorDiv.appendChild(document.createTextNode(errorMessage))

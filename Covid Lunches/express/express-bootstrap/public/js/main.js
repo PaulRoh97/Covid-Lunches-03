@@ -70,7 +70,7 @@
     $('.mobile-nav').prepend('<button type="button" class="mobile-nav-close"><i class="icofont-close"></i></button>');
     //$('#header').append('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
       $('#header').append('<button type="button" class="mobile-nav-toggle d-lg-none"> \
-                <img id="Profile_Pic" src="/img/pumpple.jpg" alt = "Profile" class= "profilepic d-lg-none" > </button > ');
+                <img id="Profile_Pic" src=' + document.getElementById("Profile_Pic").src + ' alt = "Profile" class= "profilepic d-lg-none" > </button > ');
       $('body').append('<div class="mobile-nav-overly"></div>');
 
     $(document).on('click', '.mobile-nav-toggle', function(e) {

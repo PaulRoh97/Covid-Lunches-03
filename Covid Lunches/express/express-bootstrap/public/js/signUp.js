@@ -61,7 +61,6 @@ function validateEmail() {
     return false
 }
 
-// validate password
 function validatePassword() {
     // grab the password input field
     let newPassField = document.getElementById('new-pass'),
@@ -77,7 +76,7 @@ function validatePassword() {
     return false
 }
 
-
+// ensure new password and confirm password match
 function comparePasswords() {
     /* 
     compare the newly set password to the reentered, newly set password
