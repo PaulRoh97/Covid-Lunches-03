@@ -45,3 +45,5 @@ app.use('/', covid)
 app.get('/config.js', function (req, res) {
     res.sendFile(__dirname + '/config.js');
 });
+
+module.exports = app;
