@@ -15,7 +15,8 @@
     - profile settings: localhost:3000/profile
     - inner page: localhost:3000/inner-page
   - non url navigations:
-    - login page: from homepage, click on the login button at the top right of the page
+    - login page: from homepage, click on the login button
+    - sign up: from homepage, click on the sign up button
   
 ## Test Instructions)
 - run the running instructions -> "node app"
