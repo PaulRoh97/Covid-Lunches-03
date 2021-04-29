@@ -100,15 +100,18 @@ describe('Profile Page', () => {
             expect(invalidEmailError).toBeTruthy()
         })
 
-        test('sign in attempt with valid email should get rid of error', async () => {
+        test('sign in attempt with valid email do post request', async () => {
+            let loginUrl = 'http://localhost:3000/login'
+            expect(page.url()).toMatch(loginUrl)
+            
             let invalidEmail = 'johndoe@email.com'
             let somePassword = '903uekasnf'
             await page.type('#email', invalidEmail)
             await page.type('#password', somePassword)
-
+            
+            let postRequest = 'http://localhost:3000/sign-in'
             await page.evaluate(() => document.querySelector('.sign-in-btn').click())
-            let invalidEmailError = await page.$('div.email-alert')
-            expect(invalidEmailError).toBeFalsy()
+            expect(page.url()).toMatch(postRequest)
         })
     })
 })
