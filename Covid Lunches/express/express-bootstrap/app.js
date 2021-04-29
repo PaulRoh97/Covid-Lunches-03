@@ -17,6 +17,11 @@ let app = express()
 
 var options = require('./options.js');
 
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
 
 nunjucks.configure('views', {
   autoescape: true,
