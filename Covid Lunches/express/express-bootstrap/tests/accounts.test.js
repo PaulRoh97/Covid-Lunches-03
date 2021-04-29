@@ -2,15 +2,15 @@ const covid = require("../routes/covid");
 
 const request = require("supertest");
 const express = require("express");
-const app = express();
+const app = require("../app.js");
+// const app = express();
 
-app.use(express.urlencoded({ extended: false }));
-app.use("/", covid);
+// app.use(express.urlencoded({ extended: false }));
+// app.use("/", covid);
 
 test("main route works", done => {
     request(app)
       .get("/")
-      .expect({ name: "Covid Lunches" })
       .expect(200, done);
   });
   
