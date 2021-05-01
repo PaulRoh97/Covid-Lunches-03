@@ -378,6 +378,7 @@ body {
     text-align: right;
 }
 
+/*different styling when icon instead of picture*/
 .mobile-nav-unlogged-toggle {
   position: absolute;
   right: 15px;
@@ -393,7 +394,7 @@ body {
   text-align: right;
 }
   
-  .mobile-nav-toggle i {
+  .mobile-nav-unlogged-toggle i {
     color: #fff;
   }
   
