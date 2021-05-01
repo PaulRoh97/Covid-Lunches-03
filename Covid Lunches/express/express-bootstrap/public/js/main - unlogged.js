@@ -68,10 +68,10 @@
     });
     $('body').append($mobile_nav);
     $('.mobile-nav').prepend('<button type="button" class="mobile-nav-close"><i class="icofont-close"></i></button>');
-    $('#header').append('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+    $('#header').append('<button type="button" class="mobile-nav-unlogged-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
     $('body').append('<div class="mobile-nav-overly"></div>');
 
-    $(document).on('click', '.mobile-nav-toggle', function(e) {
+    $(document).on('click', '.mobile-nav-unlogged-toggle', function(e) {
       $('body').toggleClass('mobile-nav-active');
       $('.mobile-nav-overly').toggle();
     });
@@ -88,17 +88,17 @@
     });
 
     $(document).click(function(e) {
-      var container = $(".mobile-nav, .mobile-nav-toggle");
+      var container = $(".mobile-nav, .mobile-nav-unlogged-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+          $('.mobile-nav-unlogged-toggle i').toggleClass('icofont-navigation-menu icofont-close');
           $('.mobile-nav-overly').fadeOut();
         }
       }
     });
-  } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
-    $(".mobile-nav, .mobile-nav-toggle").hide();
+  } else if ($(".mobile-nav, .mobile-nav-unlogged-toggle").length) {
+    $(".mobile-nav, .mobile-nav-unlogged-toggle").hide();
   }
 
   // Toggle .header-scrolled class to #header when page is scrolled
