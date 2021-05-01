@@ -30,6 +30,8 @@
     <!-- Template Main CSS File -->
     <link href="/css/style.css" rel="stylesheet">
 
+    <script type="text/javascript" src="/js/profilepic.js"></script>
+
     <!-- =======================================================
   * Template Name: Restaurantly - v1.2.1
   * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
@@ -62,6 +64,13 @@
 
             <h1 class="logo mr-auto"><a href="/">Covid Lunches</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
+            
+            <!-- Additional tests here
+            <img id="Profile_Pic" src="/img/chefs/chefs-2.txt" alt="Profile" class="profilepic d-none d-lg-block">
+            <img id="Profile_Pic" src="/img/chefs.jpg" alt="Profile" class="profilepic d-none d-lg-block">
+            <img id="Profile_Pic" src="/img/chefs/chefs-2.jpg" alt="Profile" class="profilepic d-none d-lg-block">
+            <img id="Profile_Pic" src="/img/chefs/chefs-2.txt" alt="Profile" class="profilepic d-none d-lg-block">
+            -->
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
@@ -71,8 +80,10 @@
                     <li><a href="#picture-menu">Menu</a></li>
                     <!-- <li><a href="#events">Pickup</a></li> -->
                     <li><a href="#contact">Contact</a></li>
-                    <li class="sign-up text-center"><a href="/sign-up">Sign up</a></li>
-                    <li class="login-button text-center"><a href="/login">Login</a></li>
+
+                    <!--Profile picture-->
+                    <img id="Profile_Pic" src={{ profilePic }} alt="Profile" class="profilepic d-none d-lg-block">
+                    <script>get_profile_pic();</script>
                 </ul>
             </nav><!-- .nav-menu -->
 
@@ -950,7 +961,7 @@
     <script src="/vendor/aos/aos.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="/js/main - unlogged.js"></script>
+    <script src="/js/main.js"></script>
 
 </body>
 
