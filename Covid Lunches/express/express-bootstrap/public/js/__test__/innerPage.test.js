@@ -140,23 +140,23 @@ describe('Inner Page tests if Buttons Render', () => {
             await page.goto('http://localhost:3000/inner-page');
         })
 
-        /*about buttons on this page */
-        test('About nav button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#about'
+        /*resource buttons on this page */
+        test('resource nav button works', async () => {
+            let homeUrl = 'http://localhost:3000/home#resources'
             /*click the button*/
             await Promise.all([
-                page.$eval('#nav_about_link', elem => elem.click()),
+                page.$eval('#nav_resource_link', elem => elem.click()),
                 page.waitForNavigation(), 
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
             await page.goto('http://localhost:3000/inner-page');
         })
-        test('About footer button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#about'
+        test('resource footer button works', async () => {
+            let homeUrl = 'http://localhost:3000/home#resources'
             /*click the button*/
             await Promise.all([
-                page.$eval('#footer_about_link', elem => elem.click()),
+                page.$eval('#footer_resource_link', elem => elem.click()),
                 page.waitForNavigation(), 
             ]);
             //console.log('Our page url: ' + page.url());
@@ -199,6 +199,166 @@ describe('Inner Page tests if Buttons Render', () => {
             await page.goto('http://localhost:3000/inner-page');
         })
 
+        /*about buttons on this page */
+        test('About nav button works', async () => {
+            let homeUrl = 'http://localhost:3000/home#about'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#nav_about_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('About footer button works', async () => {
+            let homeUrl = 'http://localhost:3000/home#about'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#footer_about_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        
+        /*menu buttons on this page */
+        test('Menu nav button works', async () => {
+            let homeUrl = 'http://localhost:3000/home#picture-menu'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#nav_menu_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+
+        /*contact buttons on this page */
+        test('contact nav button works', async () => {
+            let homeUrl = 'http://localhost:3000/home#contact'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#nav_contact_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('contact footer button works', async () => {
+            let homeUrl = 'http://localhost:3000/home#contact'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#footer_contact_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+
+        /*miscellanious links*/
+        test('up arrow works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#up_arrow', elem => elem.click()),
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('social twitter works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page#'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#social_tweet', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('social facebook works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page#'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#social_face', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('social linkedin works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page#'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#social_linked', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('social instagram works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page#'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#social_inst', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('social google plus works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page#'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#social_goog', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('footer delivery works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page#'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#footer_delivery_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('footer recipe works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page#'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#footer_recipe_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
+        test('footer allery works', async () => {
+            let homeUrl = 'http://localhost:3000/inner-page#'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#footer_allergy_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            //console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
+            await page.goto('http://localhost:3000/inner-page');
+        })
     })
     
 })
