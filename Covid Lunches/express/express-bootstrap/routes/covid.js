@@ -14,6 +14,7 @@ var router = express.Router()
 router.get('/', async function (req, res) {
     res.render('index.njk')
 })
+router.post('/', accounts.validate)
 /*
 router.get('/', async function (req, res) {
 
