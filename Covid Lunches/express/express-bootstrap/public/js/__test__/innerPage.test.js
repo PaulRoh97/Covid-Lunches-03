@@ -19,10 +19,6 @@ describe('Inner Page', () => {
 
             /*Want screenshot to make sure pic rendered in right spot */
             await page.screenshot({path: 'page-start-screenshot.png'});
-
-            /*Mo-bile mode! Mo-bile mode! Go! Go! Go!*/
-            await page.emulate(puppeteer.devices['iPhone 6']);
-
         })
 
         afterAll(async () => {
@@ -34,12 +30,21 @@ describe('Inner Page', () => {
             await page.close()
         })
 
-        test('Should have 2 profile pics for mobile/desktop modes', async () => {
+        /*May need more in profilepic css, but need at least 2*/
+        test('Should have at least 2 profile pics for mobile/desktop modes', async () => {
 
             // imageSource should have the following format:
             // http://localhost:3000/source/of/the/image
             let imageLen = (await page.$$('.profilepic')).length;
-            expect(imageLen).toBe(2);
+            console.log('Number of pictures: ' + imageLen);
+            expect(imageLen).toBeGreaterThan(1);
+            //expect(imageLen).toBe(2);
+
+            /*Mo-bile mode! Mo-bile mode! Go! Go! Go!*/
+            await page.emulate(puppeteer.devices['iPhone 6']);
+            imageLen = (await page.$$('.profilepic')).length;
+            console.log('Number of pictures in mobile: ' + imageLen);
+            expect(imageLen).toBeGreaterThan(1);
         })
 
         test('Profile picture should be rendered', async () => {

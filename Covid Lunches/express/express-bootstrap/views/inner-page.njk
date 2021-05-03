@@ -68,13 +68,6 @@
       <h1 class="logo mr-auto"><a href="/home">Covid Lunches</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      
-      <!--Profile picture
-      <img id="Profile_Pic" src="/img/pumpple.jpg" 
-           alt="Profile" class="profilepic d-none d-lg-block">
-      -->
-      <img id="Profile_Pic" src={{ profilePic }} alt="Profile" class="profilepic d-none d-lg-block">
-      <script>get_profile_pic();</script>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
@@ -82,7 +75,14 @@
           <li><a href="/home#about">About</a></li>
           <li><a href="#">Pickup</a></li>
           <li><a href="/home#resources">Resources</a></li>
+          <li><a href="/home#picture-menu">Menu</a></li>
           <li><a href="/home#contact">Contact</a></li>
+
+          <!--Profile picture-->
+          <div class="container">
+            <img id="Profile_Pic" src={{ profilePic }} alt="Profile" class="profilepic d-none d-lg-block">
+            <script>get_profile_pic();</script>
+          </div>
         </ul>
       </nav><!-- .nav-menu -->
 
