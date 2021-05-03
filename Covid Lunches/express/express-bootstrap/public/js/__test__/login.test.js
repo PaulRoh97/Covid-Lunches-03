@@ -32,21 +32,21 @@ describe('Profile Page', () => {
             let emptyFieldError = await page.$('div.input-alert')
             expect(emptyFieldError).toBeTruthy()
         })
-        
+
         test('sign in attempt with only one input (email) should still show error', async () => {
             let emailAddress = 'test@test.com'
             await page.type('#email', emailAddress)
             await page.evaluate(() => document.querySelector('.sign-in-btn').click())
-            
+
             let emptyFieldError = await page.$('div.input-alert')
             expect(emptyFieldError).toBeTruthy()
         })
-        
+
         test('sign in attempt with only one input (password) should still show error', async () => {
             let password = '903uekasnf'
             await page.type('#password', password)
             await page.evaluate(() => document.querySelector('.sign-in-btn').click())
-            
+
             let emptyFieldError = await page.$('div.input-alert')
             expect(emptyFieldError).toBeTruthy()
         })
@@ -100,18 +100,33 @@ describe('Profile Page', () => {
             expect(invalidEmailError).toBeTruthy()
         })
 
-        test('sign in attempt with valid email do post request', async () => {
-            let loginUrl = 'http://localhost:3000/login'
-            expect(page.url()).toMatch(loginUrl)
-            
-            let invalidEmail = 'johndoe@email.com'
+        test('sign in attempt with valid email should clear error', async () => {
+            let invalidEmail = '@email.com'
             let somePassword = '903uekasnf'
             await page.type('#email', invalidEmail)
             await page.type('#password', somePassword)
-            
-            let postRequest = 'http://localhost:3000/sign-in'
+
             await page.evaluate(() => document.querySelector('.sign-in-btn').click())
-            expect(page.url()).toMatch(postRequest)
+            let invalidEmailError = await page.$('div.email-alert')
+            expect(invalidEmailError).toBeTruthy()
+
+            /*  
+            since this account doesn't exist but the email is a valid format, 
+            the page will simply reload instead of loggin in the user, 
+            consequently removing the error
+            */
+            let validEmail = 'johndoe@email.com'
+            somePassword = '903uekasnf'
+            await page.evaluate(() => document.getElementById('email').value = '')
+            await page.type('#email', validEmail)
+
+            await Promise.all([
+                page.evaluate(() => document.querySelector('.sign-in-btn').click()),
+                page.waitForNavigation() // wait for reload after submit
+            ])
+            
+            invalidEmailError = await page.$('div.email-alert')
+            expect(invalidEmailError).toBeFalsy()
         })
     })
 })
