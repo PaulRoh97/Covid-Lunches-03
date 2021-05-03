@@ -13,9 +13,14 @@ describe('Profile Page', () => {
     })
 
     describe('Test if user data renders from database', () => {
-        beforeEach(async () => {
+        beforeAll(async () => {
             page = await browser.newPage()
             await page.goto('http://localhost:3000/profile')
+        })
+
+        afterEach(async () => {
+            // reload page after every test to start fresh
+            await page.reload()
         })
 
         afterAll(async () => {
@@ -54,9 +59,14 @@ describe('Profile Page', () => {
     })
 
     describe('Test password validation', () => {
-        beforeEach(async () => {
+        beforeAll(async () => {
             page = await browser.newPage()
             await page.goto('http://localhost:3000/profile')
+        })
+
+        afterEach(async () => {
+            // reload page after every test to start fresh
+            await page.reload()
         })
 
         afterAll(async () => {
