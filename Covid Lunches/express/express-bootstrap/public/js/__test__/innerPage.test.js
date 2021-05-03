@@ -4,11 +4,11 @@ describe('Inner Page', () => {
     let browser
     let page
 
-    beforeAll(async () => {
+    beforeEach(async () => {
         browser = await puppeteer.launch()
     })
 
-    afterAll(async () => {
+    afterEach(async () => {
         await browser.close()
     })
 
@@ -77,27 +77,29 @@ describe('Inner Page', () => {
             expect(alertLen).toBe(lateLen);
         })
 
-        test('Home button works', async () => {
+        test('Home header button works', async () => {
             let homeUrl = 'http://localhost:3000/home'
-            console.log('Before page url: ' + page.url());
-            /*await Promise.all([
-                page.waitForNavigation({timeout: 60000}),
-                page.click('#home-link'),
-            ]);*/
+            /*click the button*/
             await Promise.all([
-                //page.waitForNavigation(), 
                 page.$eval('#home-logo-link', elem => elem.click()),
-                //page.click('.home_link'), 
+                //page.$eval('.home_link', elem => elem.click()),
                 page.waitForNavigation(), 
-                // The promise resolves after navigation has finished
-                // Clicking the link will indirectly cause a navigation
-              ]);
-            await page.screenshot({path: 'page-mobile-screenshot.png'});
-           // await page.$eval('#home-link', elem => elem.click());
-            //await page.waitForNavigation({timeout: 60000});
+            ]);
             console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
             
+        })
+
+        test('Home nav button works', async () => {
+            let homeUrl = 'http://localhost:3000/home'
+            /*click the button*/
+            await Promise.all([
+                page.$eval('#nav_home_link', elem => elem.click()),
+                //page.$eval('.home_link', elem => elem.click()),
+                page.waitForNavigation(), 
+            ]);
+            console.log('Our page url: ' + page.url());
+            expect(page.url()).toBe(homeUrl);
             
         })
 
