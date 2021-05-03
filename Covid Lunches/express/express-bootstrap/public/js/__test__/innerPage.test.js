@@ -41,10 +41,10 @@ describe('Inner Page', () => {
             //expect(imageLen).toBe(2);
 
             /*Mo-bile mode! Mo-bile mode! Go! Go! Go!*/
-            await page.emulate(puppeteer.devices['iPhone 6']);
+            /*await page.emulate(puppeteer.devices['iPhone 6']);
             imageLen = (await page.$$('.profilepic')).length;
             console.log('Number of pictures in mobile: ' + imageLen);
-            expect(imageLen).toBeGreaterThan(1);
+            expect(imageLen).toBeGreaterThan(1);*/
         })
 
         test('Profile picture should be rendered', async () => {
@@ -58,9 +58,9 @@ describe('Inner Page', () => {
             // in order to ignore the localHost, I slice imageSource starting 
             // at len(localHost), and ending at len(imageSource)
             // this should give the exact path to the image, if successful and should match imgSrc defined above
-            imageSource = imageSource.slice(localHost.length, imageSource.length)
+            imageSource = imageSource.slice(localHost.length, imageSource.length);
 
-            expect(imageSource).toMatch(imgSrc)
+            expect(imageSource).toMatch(imgSrc);
         })
 
         test('Schedule table rendered with sample information', async () => {
@@ -79,6 +79,43 @@ describe('Inner Page', () => {
 
             console.log('Alerts on page: ' + alertLen);
             expect(alertLen).toBe(lateLen);
+        })
+
+        test('Home button works', async () => {
+            let homeUrl = 'http://localhost:3000/home'
+            await page.$eval('#home-link', elem => elem.click());
+            await page.waitForNavigation({timeout: 60000});
+            expect(page.url()).toBe(homeUrl);
+            console.log('Our page url: ' + page.url());
+            
+            /*const buttons = await page.evaluate(() => Array.from(document.querySelectorAll('#home-link') ));
+            console.log('Number of buttons: ' + buttons.length);
+            for (let i = 0; i < buttons.length; i++) {
+                
+                await page.evaluate(() => { document.querySelectorAll("a")[i].click(); });
+                //await page.waitForNavigation();
+                console.log(i + 'Our page url: ' + page.url());
+                //expect(page.url()).not.toMatch(badUrl);
+                expect(page.url()).toBe(homeUrl);
+                await page.goto('http://localhost:3000/inner-page');
+            }*/
+            //const buttons = await page.evaluate(() => Array.from(document.querySelectorAll('#home-link') ));
+            //console.log('Number of buttons: ' + buttons.length);
+            
+           // for (let i = 0; i < 6; i++) {
+                
+                await Promise.all([
+                    page.evaluate(() => document.querySelector('#home-link').click()),
+                    page.waitForNavigation() // wait for reload after submit
+                  ])
+                //await page.evaluate(() => { document.querySelectorAll("a")[i].click(); });
+                //await page.waitForNavigation();
+                console.log(0 + 'Our page url: ' + page.url());
+                //expect(page.url()).not.toMatch(badUrl);
+                expect(page.url()).toBe(homeUrl);
+                await page.goto('http://localhost:3000/inner-page');
+            //}
+
         })
 
 
