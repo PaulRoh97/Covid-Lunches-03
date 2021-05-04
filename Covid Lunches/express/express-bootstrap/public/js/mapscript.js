@@ -5,7 +5,7 @@ function callMapAPI() {
 
     /*safely access the key*/
     // var my_key = config.MAP_KEY;
-    var my_key = map.MAP_KEY;
+    var my_key = document.getElementById("key").innerHTML;
     script.src = 'https://maps.googleapis.com/maps/api/js?key=' + my_key + '&callback=myMap';
     script.async = true;
 
