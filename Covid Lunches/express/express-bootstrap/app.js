@@ -38,9 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', covid)
 
 
-// app.get('/config.js', function (req, res) {
-//     res.sendFile(process.env.MAP_KEY);
-// });
+app.get('/config.js', function (req, res) {
+    res.sendFile(__dirname + '/map.js');
+});
 let server = http.createServer(app)
 
 
