@@ -39,7 +39,7 @@ app.use('/', covid)
 
 
 // app.get('/config.js', function (req, res) {
-//     res.sendFile(__dirname + '/config.js');
+//     res.sendFile(process.env.MAP_KEY);
 // });
 let server = http.createServer(app)
 

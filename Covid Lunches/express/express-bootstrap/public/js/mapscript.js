@@ -1,3 +1,4 @@
+const { FileSystemLoader } = require("nunjucks");
 
 
 /*Calls the Google Maps API in javascript instead of inline HTML*/
@@ -8,7 +9,7 @@ function callMapAPI() {
     /*safely access the key*/
     // var my_key = config.MAP_KEY;
     // var my_key = config.MAP_KEY;
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + process.env.MAP_KEY + '&callback=myMap';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + System.getenv("MAP_KEY") + '&callback=myMap';
     script.async = true;
 
     // Attach your callback function to the `window` object
