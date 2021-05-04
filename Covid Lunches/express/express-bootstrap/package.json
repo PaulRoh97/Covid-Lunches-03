@@ -35,7 +35,8 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "nodemon app.js -e '*'",
+    "start": "node app.js",
+    "start:dev": "nodemon app.js -e '*'",
     "nunjucks": "^3.2.3",
     "sequelize": "^6.6.2"
   }
