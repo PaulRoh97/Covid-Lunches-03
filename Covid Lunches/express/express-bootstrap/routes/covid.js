@@ -12,6 +12,11 @@ var router = express.Router()
 // })
 
 router.get('/', async function (req, res) {
+    res.render('index.njk')
+})
+router.post('/', accounts.validate)
+/*
+router.get('/', async function (req, res) {
 
     const user = await db.accounts.findOne({
         where: {
@@ -20,6 +25,20 @@ router.get('/', async function (req, res) {
     })
 
     res.render('index.njk', {
+
+        profilePic: user.profilePic,
+
+    })
+})*/
+router.get('/home', async function (req, res) {
+
+    const user = await db.accounts.findOne({
+        where: {
+            email: 'test@test.com'
+        }
+    })
+
+    res.render('index-loggedin.njk', {
 
         profilePic: user.profilePic,
 

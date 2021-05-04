@@ -55,7 +55,6 @@
       <div class="languages">
         <ul>
           <li>En</li>
-          <li><a href="#">Esp</a></li>
         </ul>
       </div>
     </div>
@@ -65,26 +64,24 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="/">Covid Lunches</a></h1>
+      <h1 class="logo mr-auto"><a id ="home-logo-link" class ="home_link" href="/home">Covid Lunches</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      
-      <!--Profile picture
-      <img id="Profile_Pic" src="/img/pumpple.jpg" 
-           alt="Profile" class="profilepic d-none d-lg-block">
-      -->
-      <img id="Profile_Pic" src={{ profilePic }} alt="Profile" class="profilepic d-none d-lg-block">
-      <script>get_profile_pic();</script>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#pickup">Pickup</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li class="book-a-table text-center"><a href="#book-a-table">Login</a></li>
-          <li class="book-a-table text-center"><a href="#book-a-table">Signup</a></li>
+          <li><a id = "nav_home_link" class ="home_link" href="/home">Home</a></li>
+          <li><a id = "nav_about_link" href="/home#about">About</a></li>
+          <li><a id = "nav_pickup_link" href="#">Pickup</a></li>
+          <li><a id = "nav_resource_link" href="/home#resources">Resources</a></li>
+          <li><a id = "nav_menu_link" href="/home#picture-menu">Menu</a></li>
+          <li><a id = "nav_contact_link" href="/home#contact">Contact</a></li>
+
+          <!--Profile picture-->
+          <div class="container">
+            <img id="Profile_Pic" src={{ profilePic }} alt="Profile" class="profilepic d-none d-lg-block">
+            <script>get_profile_pic();</script>
+          </div>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -98,7 +95,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>Inner Page</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a id = "main_home_link" class ="home_link" href="/home">Home</a></li>
             <li>Inner Page</li>
           </ol>
         </div>
@@ -166,11 +163,11 @@
                 <strong>Email:</strong> info@example.com<br>
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a id = "social_tweet" href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a id = "social_face" href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a id = "social_inst" href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a id = "social_goog" href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a id = "social_linked" href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
           </div>
@@ -178,30 +175,29 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About Us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Pickup</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Resources</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer_home_link" class ="home_link" href="/home">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer_about_link" href="/home#about">About Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer_pickup_link" href="#">Pickup</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer_resource_link" href="/home#resources">Resources</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer_contact_link" href="/home#contact">Contact</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Pickup</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Delivery</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Recipes</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Allergy Accomodations</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer2_pickup_link" href="#">Pickup</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer_delivery_link" href="#">Delivery</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer_recipe_link" href="#">Recipes</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a id = "footer_allergy_link" href="#">Allergy Accomodations</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Notifications</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            
+            <!-- Should already have subscription if logged in-->
 
           </div>
 
@@ -224,7 +220,7 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+  <a id = "up_arrow" href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="/vendor/jquery/jquery.min.js"></script>
