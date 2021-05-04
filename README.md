@@ -20,6 +20,8 @@
   
 ## Test Instructions)
 - run the running instructions -> "node app"
-- while application is running run "npm test" from the "Covid Lunches/express/express-bootstrap" folder for general testing
-  
-  
+- while application is running, run the following scripts individually from the "Covid Lunches/express/express-bootstrap" folder:
+  - npm test -- login.test.js
+  - npm test -- profilePage.test.js
+  - npm test -- innerPage.test.js
+  - npm test -- menu.test.js
