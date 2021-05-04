@@ -44,6 +44,6 @@ app.get('/config.js', function (req, res) {
 let server = http.createServer(app)
 
 
-server.listen('3000', () => {
+server.listen(process.env.PORT || '3000', () => {
   console.log('Listening on port 3000')
 })
