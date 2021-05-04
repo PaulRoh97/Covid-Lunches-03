@@ -6,14 +6,20 @@ const NEW_PASS = 0,
 let path = window.location.pathname
 
 if (path === '/sign-up') {
-    document.getElementById('sign-up-button').addEventListener('click', () => {
+    document.getElementById('sign-up-button').addEventListener('click', (event) => {
         clearError('alert-danger')
         emptyFields = fieldsEmpty()
         emailValidated = validateEmail()
         passwordValidated = validatePassword()
-    
-        if (!emptyFields && emailValidated && passwordValidated) {
-            // save to database
+
+        // if (!emptyFields && emailValidated && passwordValidated) {
+        //     // save to database
+        //     location.href = '/student-info'
+        // }
+        // prevent actually submitting the form if everything is not yet validated
+        if (emptyFields || !emailValidated || !passwordValidated) {
+            event.preventDefault()
+        } else {
             location.href = '/student-info'
         }
     })

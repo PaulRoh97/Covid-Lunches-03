@@ -53,7 +53,7 @@
 <body>
     <div class="container rounded d-flex justify-content-center bg-white mt-5 mb-5">
         <div class="col-md-8">
-            <div class="forms p-3 py-5">
+            <form method="POST" action="/sign-up" class="forms p-3 py-5">
 
                 <div class="page-title d-flex mb-3 justify-content-center">
                     <h4 class="text-right">Create an account</h4>
@@ -63,40 +63,40 @@
                     Please fill in your information below to sign up!
                 </div>
 
-                <form id="first-form" class="row mt-3">
+                <div id="first-form" class="row mt-3">
 
                     <div class="col-md-6">
                         <label class="labels">First name</label>
-                        <input type="text" class="form-control" placeholder="First name">
+                        <input name="firstName" type="text" class="form-control" placeholder="First name">
                     </div>
 
                     <div class="col-md-6">
                         <label class="labels">Last name</label>
-                        <input type="text" class="form-control" placeholder="Last name">
+                        <input name="lastName" type="text" class="form-control" placeholder="Last name">
                     </div>
 
                     <div class="col-md-6">
                         <label class="labels">Phone number</label>
-                        <input type="tel" pattern="[0-9]*" class="form-control" placeholder="Phone number">
+                        <input name="phone" type="tel" pattern="[0-9]*" class="form-control" placeholder="Phone number">
                     </div>
 
-                </form>
+                </div>
 
-                <form class="row mt-3">
+                <div class="row mt-3">
 
                     <div class="col-md-12">
                         <label class="labels">Street address</label>
-                        <input type="text" class="form-control" placeholder="Street address">
+                        <input name="streetAddr" type="text" class="form-control" placeholder="Street address">
                     </div>
 
                     <div class="col-md-12">
                         <label class="labels">City</label>
-                        <input type="text" class="form-control" placeholder="City">
+                        <input name="city" type="text" class="form-control" placeholder="City">
                     </div>
 
                     <div class="col-md-6">
                         <label class="labels">State</label>
-                        <select class="form-select states">
+                        <select name="state" class="form-select states">
                             <option value="---">---</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -154,21 +154,21 @@
 
                     <div class="col-md-6">
                         <label class="labels">ZIP code</label>
-                        <input type="number" pattern="[0-9]*" class="form-control" placeholder="ZIP code">
+                        <input name="zip" type="number" pattern="[0-9]*" class="form-control" placeholder="ZIP code">
                     </div>
 
-                </form>
+                </div>
 
-                <form class="row mt-3">
+                <div class="row mt-3">
 
                     <div class="email-address col-md-12">
                         <label class="labels">Email address</label>
-                        <input id="email" type="email" class="form-control" placeholder="name@example.com">
+                        <input name="email" id="email" type="email" class="form-control" placeholder="name@example.com">
                     </div>
 
                     <div class="new-password col-md-12">
                         <label class="labels">New password</label>
-                        <input id="new-pass" type="password" class="form-control" placeholder="New password">
+                        <input name="password" id="new-pass" type="password" class="form-control" placeholder="New password">
                     </div>
 
                     <div class="confirm-password col-md-12">
@@ -177,12 +177,12 @@
                         <span id='message'></span>
                     </div>
 
-                </form>
+                </div>
 
                 <div class="mt-5 text-center">
-                    <button id="sign-up-button" class="btn btn-primary sign-up-button" type="button">Sign Up</button>
+                    <button id="sign-up-button" class="btn btn-primary sign-up-button" type="submit">Sign Up</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <script src="/js/signUp.js"></script>
