@@ -13,11 +13,6 @@ exports.create = (req, res) => {
     return;
   }
 
-  console.log(req.body.email);
-  console.log(req.body.password);
-  console.log(req.body.firstName);
-  console.log(req.body.lastName);
-
   // Create a Account
   const account = {
     email: req.body.email,

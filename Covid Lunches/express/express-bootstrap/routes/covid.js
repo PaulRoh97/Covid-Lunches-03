@@ -98,4 +98,9 @@ router.post('/sign-in', accounts.validate)
 
 router.post('/sign-up', accounts.create)
 
+router.post('/sign-up-student', async function (req, res) {
+    //console.log('in get function')
+    res.redirect('/inner-page')
+})
+
 module.exports = router;
