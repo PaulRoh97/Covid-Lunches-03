@@ -12,17 +12,10 @@ if (path === '/sign-up') {
         emailValidated = validateEmail()
         passwordValidated = validatePassword()
 
-        // if (!emptyFields && emailValidated && passwordValidated) {
-        //     // save to database
-        //     location.href = '/student-info'
-        // }
         // prevent actually submitting the form if everything is not yet validated
         if (emptyFields || !emailValidated || !passwordValidated) {
             event.preventDefault()
-        } 
-        // else {
-        //     location.href = '/student-info'
-        // }
+        }
     })
 } else if (path === '/student-info') {
     document.getElementById('submit-button').addEventListener('click', (event) => {
