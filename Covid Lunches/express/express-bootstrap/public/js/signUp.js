@@ -24,9 +24,12 @@ if (path === '/sign-up') {
         }
     })
 } else if (path === '/student-info') {
-    document.getElementById('submit-button').addEventListener('click', () => {
+    document.getElementById('submit-button').addEventListener('click', (event) => {
         clearError('alert-danger')
         emptyFields = fieldsEmpty()
+        if (emptyFields) {
+            event.preventDefault()
+        }
     })
 }
 
