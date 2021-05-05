@@ -1,30 +1,42 @@
 const db = require("../models");
 const Account = db.accounts;
 const Op = db.Sequelize.Op;
+const url = require('url'); 
 
 // Create and Save a new Account
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.title) {
+  if (!req.body.email) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
     return;
   }
 
+  console.log(req.body.email);
+  console.log(req.body.password);
+  console.log(req.body.firstName);
+  console.log(req.body.lastName);
+
   // Create a Account
   const account = {
     email: req.body.email,
     password: req.body.password,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     profilepic: req.body.profilepic
   };
 
   // Save Account in the database
   Account.create(account)
     .then(data => {
-      res.send(data);
+      console.log("here");
+      res.redirect(url.format({
+        pathname:"/student-info",
+        query: {
+           "firstName": data.firstName
+         }
+      }));
     })
     .catch(err => {
       res.status(500).send({

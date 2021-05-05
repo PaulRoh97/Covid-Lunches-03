@@ -89,9 +89,13 @@ router.get('/sign-up', async function (req, res) {
 })
 router.get('/student-info', async function (req, res) {
     //console.log('in get function')
-    res.render('sign-up-student-info-page.njk')
+    res.render('sign-up-student-info-page.njk', {
+        name: req.query.firstName
+    })
 })
 
 router.post('/sign-in', accounts.validate)
+
+router.post('/sign-up', accounts.create)
 
 module.exports = router;

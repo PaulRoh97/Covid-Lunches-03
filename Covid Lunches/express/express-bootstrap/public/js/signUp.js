@@ -19,9 +19,10 @@ if (path === '/sign-up') {
         // prevent actually submitting the form if everything is not yet validated
         if (emptyFields || !emailValidated || !passwordValidated) {
             event.preventDefault()
-        } else {
-            location.href = '/student-info'
-        }
+        } 
+        // else {
+        //     location.href = '/student-info'
+        // }
     })
 } else if (path === '/student-info') {
     document.getElementById('submit-button').addEventListener('click', (event) => {
