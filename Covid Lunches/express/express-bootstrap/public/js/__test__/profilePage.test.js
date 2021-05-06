@@ -15,7 +15,7 @@ describe('Profile Page', () => {
     describe('Test if user data renders from database', () => {
         beforeAll(async () => {
             page = await browser.newPage()
-            await page.goto('http://localhost:3000/profile')
+            await page.goto('https://covidlunches.herokuapp.com/profile')
         })
 
         afterEach(async () => {
@@ -28,11 +28,11 @@ describe('Profile Page', () => {
         })
 
         test('a profile picture should be rendered', async () => {
-            let imgSrc = '/img/chefs/chefs-1.jpg'
-            let localHost = 'http://localhost:3000'
+            let imgSrc = 'img/chefs/chefs-1.jpg'
+            let localHost = 'https://covidlunches.herokuapp.com/'
 
             // imageSource should have the following format:
-            // http://localhost:3000/source/of/the/image
+            // https://covidlunches.herokuapp.com/source/of/the/image
             let imageSource = await page.$eval('.db-profile-pic', img => img.src);
 
             // in order to ignore the localHost, I slice imageSource starting 
@@ -61,7 +61,7 @@ describe('Profile Page', () => {
     describe('Test password validation', () => {
         beforeAll(async () => {
             page = await browser.newPage()
-            await page.goto('http://localhost:3000/profile')
+            await page.goto('https://covidlunches.herokuapp.com/profile')
         })
 
         afterEach(async () => {
