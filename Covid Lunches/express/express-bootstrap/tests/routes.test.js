@@ -1,8 +1,8 @@
 const covid = require("../routes/covid");
-
 const request = require("supertest");
 const express = require("express");
 const app = require("../app.js");
+const { accounts } = require("../models");
 // const app = express();
 
 // app.use(express.urlencoded({ extended: false }));
@@ -31,6 +31,6 @@ test("testing sign up route works", done => {
     request(app)
       .post("/sign-up")
       .type("form")
-      .send({ email: "test1@test.com", firstName: "Johnny1", lastName: "Doe1", password: "Password1@#$" })
+      .send({ email: "test12@test.com", firstName: "Johnny12", lastName: "Doe12", password: "Password1@#$" })
       .expect(302, done);
-  });
+});
