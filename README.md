@@ -8,7 +8,7 @@
 - run "npm install" to install dependencies for running/testing
   
 ## Running Instructions)
-- run "node app" from "Covid Lunches/express/express-bootstrap" folder to run application
+- run "npm start" from "Covid Lunches/express/express-bootstrap" folder to run application
 - navigate to "localhost:3000/" to view application
   - list of urls:
     - homepage: localhost:3000/

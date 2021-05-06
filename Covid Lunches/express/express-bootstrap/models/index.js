@@ -5,7 +5,13 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize("socka", options.storageConfig.user, options.storageConfig.password, {
   host: options.storageConfig.host,
   dialect: "mysql",
-  logging: false
+  logging: false,
+  pool: {
+    max: 100,
+    min: 0,
+    idle: 200000,
+    acquire: 1000000,
+  }
 });
 
 const db = {};
