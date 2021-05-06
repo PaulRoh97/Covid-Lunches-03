@@ -21,4 +21,3 @@
 - run the following script to run all tests:
   - npm test
     - note that route/db testing is inhibited due to deployment changes
-

@@ -79,6 +79,7 @@ router.get('/inner-page', async function (req, res) {
     res.render('inner-page.njk', {
 
         profilePic: user.profilePic,
+        mapKey: process.env.MAP_KEY
 
     })
 })

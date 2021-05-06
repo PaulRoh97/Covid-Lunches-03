@@ -1,13 +1,11 @@
-
-
 /*Calls the Google Maps API in javascript instead of inline HTML*/
 function callMapAPI() {
 
     var script = document.createElement('script');
 
     /*safely access the key*/
-    var my_key = config.MAP_KEY;
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + my_key + '&callback=myMap';
+    var my_key = document.getElementById("key").innerHTML;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${my_key}&callback=myMap`;
     script.async = true;
 
     // Attach your callback function to the `window` object

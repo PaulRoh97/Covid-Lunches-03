@@ -34,12 +34,10 @@ app.use(sassMiddleware({
 
 app.use(express.static(path.join(__dirname, 'public')))
 
-
 app.use('/', covid)
 
 
-app.get('/config.js', function (req, res) {
-    res.sendFile(__dirname + '/config.js');
-});
-
-module.exports = app;
+let server = http.createServer(app)
+server.listen(process.env.PORT || '3000', () => {
+  console.log('Listening on port 3000')
+})

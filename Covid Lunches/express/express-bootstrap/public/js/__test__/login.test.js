@@ -15,7 +15,7 @@ describe('Profile Page', () => {
     describe('Test input validation', () => {
         beforeAll(async () => {
             page = await browser.newPage()
-            await page.goto('http://localhost:3000/login')
+            await page.goto('https://covidlunches.herokuapp.com/login')
         })
 
         afterEach(async () => {
@@ -55,7 +55,7 @@ describe('Profile Page', () => {
     describe('Test email validation once both fields are not empty', () => {
         beforeAll(async () => {
             page = await browser.newPage()
-            await page.goto('http://localhost:3000/login')
+            await page.goto('https://covidlunches.herokuapp.com/login')
         })
 
         afterEach(async () => {
