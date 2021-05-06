@@ -26,6 +26,7 @@ test("testing login route works", done => {
     });
 });
 
+
 test("testing sign up route works", done => {
     request(app)
       .post("/sign-up")
