@@ -14,14 +14,16 @@ test("main route works", done => {
       .expect(200, done);
   });
   
-  test("testing route works", done => {
-    request(app)
-      .post("/sign-in")
-      .type("form")
-      .send({ email: "test@test.com", password: "password123" })
-      .then(() => {
-        request(app)
-          .get("/inner-page")
-          .expect(200, done);
-      });
-  });
+test("testing route works", done => {
+  request(app)
+    .post("/sign-in")
+    .type("form")
+    .send({ email: "test@test.com", password: "password123" })
+    .then(() => {
+      request(app)
+        .get("/inner-page")
+        .expect(200, done);
+    });
+});
+
+
