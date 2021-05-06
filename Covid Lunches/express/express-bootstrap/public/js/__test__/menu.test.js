@@ -15,7 +15,7 @@ describe('Menu Options', () => {
     describe('Test if menu items renders on the page.', () => {
         beforeEach(async () => {
             page = await browser.newPage()
-            await page.goto('http://localhost:3000/')
+            await page.goto('https://covidlunches.herokuapp.com/')
         })
 
         afterAll(async () => {

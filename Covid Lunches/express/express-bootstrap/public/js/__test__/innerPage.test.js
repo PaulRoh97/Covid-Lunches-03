@@ -15,7 +15,7 @@ describe('Inner Page', () => {
     describe('Test if elements renders from database', () => {
         beforeAll(async () => {
             page = await browser.newPage()
-            await page.goto('http://localhost:3000/inner-page')
+            await page.goto('https://covidlunches.herokuapp.com/inner-page')
 
             /*Want screenshot to make sure pic rendered in right spot */
             await page.screenshot({path: 'page-start-screenshot.png'});
@@ -30,7 +30,7 @@ describe('Inner Page', () => {
         test('Should have at least 2 profile pics for mobile/desktop modes', async () => {
 
             // imageSource should have the following format:
-            // http://localhost:3000/source/of/the/image
+            // https://covidlunches.herokuapp.com/source/of/the/image
             let imageLen = (await page.$$('.profilepic')).length;
             console.log('Number of pictures: ' + imageLen);
             expect(imageLen).toBeGreaterThan(1);
@@ -48,7 +48,7 @@ describe('Inner Page', () => {
             let localHost = 'http://localhost:3000'
 
             // imageSource should have the following format:
-            // http://localhost:3000/source/of/the/image
+            // https://covidlunches.herokuapp.com/source/of/the/image
             let imageSource = await page.$eval('.profilepic', img => img.src);
 
             // in order to ignore the localHost, I slice imageSource starting 
@@ -81,7 +81,7 @@ describe('Inner Page', () => {
     describe('Inner Page tests if Buttons Render', () => {
         beforeAll(async () => {
             page = await browser.newPage()
-            await page.goto('http://localhost:3000/inner-page')
+            await page.goto('https://covidlunches.herokuapp.com/inner-page')
 
             /*Want screenshot to make sure pic rendered in right spot */
             await page.screenshot({path: 'page-start-screenshot.png'});
@@ -94,7 +94,7 @@ describe('Inner Page', () => {
 
         /*All nav buttons on this page */
         test('Home header button works', async () => {
-            let homeUrl = 'http://localhost:3000/home'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home'
             /*click the button*/
             await Promise.all([
                 page.$eval('#home-logo-link', elem => elem.click()),
@@ -103,10 +103,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('Home nav button works', async () => {
-            let homeUrl = 'http://localhost:3000/home'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home'
             /*click the button*/
             await Promise.all([
                 page.$eval('#nav_home_link', elem => elem.click()),
@@ -115,10 +115,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('Home main button works', async () => {
-            let homeUrl = 'http://localhost:3000/home'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home'
             /*click the button*/
             await Promise.all([
                 page.$eval('#main_home_link', elem => elem.click()),
@@ -126,10 +126,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('Home footer button works', async () => {
-            let homeUrl = 'http://localhost:3000/home'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer_home_link', elem => elem.click()),
@@ -137,12 +137,12 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
 
         /*resource buttons on this page */
         test('resource nav button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#resources'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home#resources'
             /*click the button*/
             await Promise.all([
                 page.$eval('#nav_resource_link', elem => elem.click()),
@@ -150,10 +150,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('resource footer button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#resources'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home#resources'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer_resource_link', elem => elem.click()),
@@ -161,12 +161,12 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
 
         /*pickup buttons on this page */
         test('Pickup nav button works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#nav_pickup_link', elem => elem.click()),
@@ -174,10 +174,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('Pickup footer button works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer_pickup_link', elem => elem.click()),
@@ -185,10 +185,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('Pickup footer2 button works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer2_pickup_link', elem => elem.click()),
@@ -196,12 +196,12 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
 
         /*about buttons on this page */
         test('About nav button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#about'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home#about'
             /*click the button*/
             await Promise.all([
                 page.$eval('#nav_about_link', elem => elem.click()),
@@ -209,10 +209,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('About footer button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#about'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home#about'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer_about_link', elem => elem.click()),
@@ -220,12 +220,12 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         
         /*menu buttons on this page */
         test('Menu nav button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#picture-menu'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home#picture-menu'
             /*click the button*/
             await Promise.all([
                 page.$eval('#nav_menu_link', elem => elem.click()),
@@ -233,12 +233,12 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
 
         /*contact buttons on this page */
         test('contact nav button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#contact'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home#contact'
             /*click the button*/
             await Promise.all([
                 page.$eval('#nav_contact_link', elem => elem.click()),
@@ -246,10 +246,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('contact footer button works', async () => {
-            let homeUrl = 'http://localhost:3000/home#contact'
+            let homeUrl = 'https://covidlunches.herokuapp.com/home#contact'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer_contact_link', elem => elem.click()),
@@ -257,22 +257,22 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
 
         /*miscellanious links*/
         test('up arrow works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page'
             /*click the button*/
             await Promise.all([
                 page.$eval('#up_arrow', elem => elem.click()),
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('social twitter works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#social_tweet', elem => elem.click()),
@@ -280,10 +280,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('social facebook works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#social_face', elem => elem.click()),
@@ -291,10 +291,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('social linkedin works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#social_linked', elem => elem.click()),
@@ -302,10 +302,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('social instagram works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#social_inst', elem => elem.click()),
@@ -313,10 +313,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('social google plus works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#social_goog', elem => elem.click()),
@@ -324,10 +324,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('footer delivery works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer_delivery_link', elem => elem.click()),
@@ -335,10 +335,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('footer recipe works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer_recipe_link', elem => elem.click()),
@@ -346,10 +346,10 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
         test('footer allery works', async () => {
-            let homeUrl = 'http://localhost:3000/inner-page#'
+            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page#'
             /*click the button*/
             await Promise.all([
                 page.$eval('#footer_allergy_link', elem => elem.click()),
@@ -357,7 +357,7 @@ describe('Inner Page', () => {
             ]);
             //console.log('Our page url: ' + page.url());
             expect(page.url()).toBe(homeUrl);
-            await page.goto('http://localhost:3000/inner-page');
+            await page.goto('https://covidlunches.herokuapp.com/inner-page');
         })
     })
     
