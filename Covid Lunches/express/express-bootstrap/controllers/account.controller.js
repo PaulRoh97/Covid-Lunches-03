@@ -159,5 +159,4 @@ exports.validate = (req, res) => {
       res.redirect('/login');
     });
   
-
 };
