@@ -108,18 +108,6 @@ describe('Home Page', () => {
             expect(page.url()).toBe(homeUrl);
             await page.goto('https://covidlunches.herokuapp.com/home');
         })
-        test('Pickup footer2 button works', async () => {
-            let homeUrl = 'https://covidlunches.herokuapp.com/inner-page'
-            /*click the button*/
-            await Promise.all([
-                page.$eval('#footer2_pickup_link', elem => elem.click()),
-                page.waitForNavigation(), 
-            ]);
-            //console.log('Our page url: ' + page.url());
-            expect(page.url()).toBe(homeUrl);
-            await page.goto('https://covidlunches.herokuapp.com/home');
-        })
-
         /*about buttons on this page */
         test('About nav button works', async () => {
             let homeUrl = 'https://covidlunches.herokuapp.com/home'
@@ -238,39 +226,6 @@ describe('Home Page', () => {
             /*click the button*/
             await Promise.all([
                 page.$eval('#social_goog', elem => elem.click()),
-                page.waitForNavigation(), 
-            ]);
-            //console.log('Our page url: ' + page.url());
-            expect(page.url()).toBe(homeUrl);
-            await page.goto('https://covidlunches.herokuapp.com/home');
-        })
-        test('footer delivery works', async () => {
-            let homeUrl = 'https://covidlunches.herokuapp.com/home#'
-            /*click the button*/
-            await Promise.all([
-                page.$eval('#footer_delivery_link', elem => elem.click()),
-                page.waitForNavigation(), 
-            ]);
-            //console.log('Our page url: ' + page.url());
-            expect(page.url()).toBe(homeUrl);
-            await page.goto('https://covidlunches.herokuapp.com/home');
-        })
-        test('footer recipe works', async () => {
-            let homeUrl = 'https://covidlunches.herokuapp.com/home#'
-            /*click the button*/
-            await Promise.all([
-                page.$eval('#footer_recipe_link', elem => elem.click()),
-                page.waitForNavigation(), 
-            ]);
-            //console.log('Our page url: ' + page.url());
-            expect(page.url()).toBe(homeUrl);
-            await page.goto('https://covidlunches.herokuapp.com/home');
-        })
-        test('footer allery works', async () => {
-            let homeUrl = 'https://covidlunches.herokuapp.com/home#'
-            /*click the button*/
-            await Promise.all([
-                page.$eval('#footer_allergy_link', elem => elem.click()),
                 page.waitForNavigation(), 
             ]);
             //console.log('Our page url: ' + page.url());
