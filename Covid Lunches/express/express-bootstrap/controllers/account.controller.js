@@ -26,6 +26,7 @@ exports.create = (req, res) => {
   Account.create(account)
     .then(data => {
       console.log("here");
+      res.status(200);
       res.redirect(url.format({
         pathname:"/student-info",
         query: {
