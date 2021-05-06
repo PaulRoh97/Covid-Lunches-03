@@ -41,9 +41,7 @@
     - sign up: from homepage, click on the sign up button
   
 ## Test Instructions)
-- while application is running, run the following scripts individually from the "Covid Lunches/express/express-bootstrap" folder:
-  - npm test -- login.test.js
-  - npm test -- profilePage.test.js
-  - npm test -- innerPage.test.js
-  - npm test -- menu.test.js
+- run the following script to run all tests:
+  - npm test
+    - note that route/db testing is inhibited due to deployment changes
 
