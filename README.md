@@ -21,4 +21,29 @@
 - run the running instructions -> "npm start"
 - while application is running run "npm test" from the "Covid Lunches/express/express-bootstrap" folder for general testing
   
+# Covid-Lunches-03
+
+## Notes)
+- Navigate to https://covidlunches.herokuapp.com/ for the webapp.
   
+## Required Technologies)
+- Node.js 14.16.0
+- run "npm install" to install dependencies for testing
+  
+## Instructions)
+- navigate to "https://covidlunches.herokuapp.com/" to view application
+  - list of urls:
+    - homepage: https://covidlunches.herokuapp.com/
+    - profile settings: https://covidlunches.herokuapp.com/profile
+    - inner page: https://covidlunches.herokuapp.com/inner-page
+  - non url navigations:
+    - login page: from homepage, click on the login button
+    - sign up: from homepage, click on the sign up button
+  
+## Test Instructions)
+- while application is running, run the following scripts individually from the "Covid Lunches/express/express-bootstrap" folder:
+  - npm test -- login.test.js
+  - npm test -- profilePage.test.js
+  - npm test -- innerPage.test.js
+  - npm test -- menu.test.js
+
